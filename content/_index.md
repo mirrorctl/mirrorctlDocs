@@ -1,8 +1,6 @@
 ---
-toc: false
-type: default
+title: "mirrorctl"
 layout: hextra-home
-width: wide
 ---
 
 {{< hextra/hero-container
@@ -25,36 +23,91 @@ width: wide
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-subtitle >}}
   *mirrorctl* is a mirror-syncing utility for Debian & Ubuntu software repositories.<br/><br/>
-  If you're looking for a reliable, easy-to-maintain utility for syncing external mirrors,
+  If you're looking for a reliable, secure, and easy-to-use utility for syncing external mirrors,
   consider *mirrorctl*.
 {{< /hextra/hero-subtitle >}}
 </div>
 {{< /hextra/hero-container >}}
 
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
+
 {{< hextra/hero-container >}}
 {{< hextra/hero-section heading="h3" >}}
-Noteworthy Features
+Why use mirrorctl?
 {{< /hextra/hero-section >}}
 {{< /hextra/hero-container >}}
 
-* **Atomic updates** - `mirrorctl` ensures zero-downtime mirror updates by downloading packages to a temporary directory, then atomically switching a symlink to the new content once the sync is complete. This guarantees users always see a consistent, fully-synced mirror rather than one with updates in progress.
-* **Configurable snapshots** - You can create post-sync snapshots, giving you the ability to easily roll-back to a known-good mirror state or to facilitate reproducible builds.
-* **Staging snapshots** - Mirrors can be configured to publish to a `staging` snapshot, allowing you to fully test mirror contents before promoting them to production. This is especially helpful in preventing any upstream package dependency issues from affecting your users or your deployments.
-* **Partial mirror syncs** - You can sync only the portions of a mirror that you want, based on a number of factors, including:
-    * architecture (e.g., `amd64`)
-    * component (e.g., `main`)
-    * suite (e.g., `trixie`)
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
 
-  And you can even filter repository downloads to:
-    * exclude certain patterns (e.g., [exclude](https://packages.microsoft.com/repos/code/pool/main/c/), the `code-exporloration` and `code-insiders` packages, only downloading the `code` packages).
-    * download only a prescribed number of package versions, and ignore the rest (e.g., only download the three most recent [versions of a package](https://packages.microsoft.com/repos/code/pool/main/c/code/)).
-* **Keep your keys** - `mirrorctl` does not manipulate mirrors (for example, it doesn't merge packages from one mirror into another), so the signing keys provided by the upstream mirrors are the only keys that you need to work with.
-* **Safely predict storage needs** - `mirrorctl` offers a `--dry-run` flag that shows you how much space is needed for each mirror, and provides a summary storage total, too. This help you to make sure you have enough space for your storage needs before you start your syncs.
+{{< hextra/feature-grid cols="3" >}}
+  {{< hextra/feature-card
+    title="Atomic Updates"
+    subtitle="`mirrorctl` only updates the publicly-facing mirror once a successful mirror sync is complete. Users will never see a mirror with a 'sync in progress' message."
+  >}}
 
-## Security-related highlights
+  {{< hextra/feature-card
+    title="Configurable Snapshots"
+    subtitle="Create repository snapshots at will, giving you the ability to easily roll-back to a known-good mirror state or to facilitate reproducible builds. You can even stage snapshots for testing before promoting them to production."
+  >}}
 
-* **Checksum validation** - `mirrorctl` validates checksums before downloading packages, and only downloads packages when the checksums match. Checksum types `md5`, `sha1`, `sha256` and `sha512` are supported.
-* **PGP key validation** - By default, the application requires that you provide the upstream mirror's public PGP key, ensuring the integrity of downloaded packages. (This feature can be disabled if needed.)
-* **TLS validation** - The application can validate upstream mirror TLS support, and specify minimum and maximum TLS versions. For advanced use cases, `mirrorctl` also supports custom certificate authorities, mutualTLS certificate/key combinations, specific cipher selections, and Server Name Identification (SNI) configurations.
-* **Path and symlink validation** - `mirrorctl` also blocks directory traversal attempts, restricts symlinks to approved directories, and validates all file paths. This prevents malicious repository metadata from accessing files outside of prescribed boundaries.
-* **Up to date and well-maintained components** - We stay up-to-date with dependency updates and provide a Software Bill of Materials for dependency validation.
+  {{< hextra/feature-card
+    title="Partial Repository Syncs"
+    subtitle="You can sync only the portions of a mirror that you want, limiting your sync based on architecture, component or suite. You can even filter repository downloads to exclude certain patterns or download only a prescribed number of package versions."
+  >}}
+
+  {{< hextra/feature-card
+    title="Predictable Storage Needs"
+    subtitle="`mirrorctl` provides a '--dry-run' flag that shows you how much storage would be used by a repository sync without actually downloading the packages. This helps you to gauge storage needs before you sync your repositories."
+  >}}
+
+  {{< hextra/feature-card
+    title="Easy to Keep Clean"
+    subtitle="`mirrorctl` can optionally prune repository snapshots based on a set count of snapshots, or you can prune your repository based on a snapshot's age. Either way, `mirrorctl` makes it easy to keep storage needs in check."
+  >}}
+{{< /hextra/feature-grid >}}
+
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
+
+{{< hextra/hero-container >}}
+{{< hextra/hero-section heading="h3" >}}
+Security-related highlights
+{{< /hextra/hero-section >}}
+{{< /hextra/hero-container >}}
+
+{{< hextra/feature-grid cols="3" >}}
+  {{< hextra/feature-card
+    title="Checksum Validation"
+    subtitle="`mirrorctl` validates checksums before downloading packages, and only downloads packages when the checksums match. Checksum types `md5`, `sha1`, `sha256` and `sha512` are supported."
+  >}}
+
+  {{< hextra/feature-card
+    title="PGP Key Validation"
+    subtitle="By default, the application requires that you provide the upstream mirror's public PGP key, ensuring the integrity of downloaded packages. (This feature can be disabled if needed during testing.)"
+  >}}
+
+  {{< hextra/feature-card
+    title="No Need to Generate Keys"
+    subtitle="`mirrorctl` does not manipulate mirrors (for example, it doesn't merge packages from one repository into another), so the PGP keys provided by the upstream repositories are the only keys that you need to work with."
+  >}}
+
+  {{< hextra/feature-card
+    title="Path and Symlink Protections"
+    subtitle="`mirrorctl` also blocks directory traversal attempts, restricts symlinks to approved directories, and validates all file paths. This prevents malicious repository metadata from accessing files outside of prescribed boundaries."
+  >}}
+
+  {{< hextra/feature-card
+    title="TLS Validation"
+    subtitle="The application can validate upstream mirror TLS support, and allows you to configure minimum and maximum TLS versions. For advanced use cases, `mirrorctl` also supports custom certificate authorities, mutualTLS certificate/key combinations, specific cipher selections, and Server Name Identification (SNI) configurations."
+  >}}
+
+  {{< hextra/feature-card
+    title="Signed Artifacts with SBOMs Included"
+    subtitle="Each release is signed by our repository's `cosign` key, and includes a Software Bill of Materials, allowing you to easily validate the artifacts and their dependencies."
+  >}}
+{{< /hextra/feature-grid >}}
