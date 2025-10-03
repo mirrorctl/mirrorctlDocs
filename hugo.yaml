@@ -29,15 +29,15 @@ menu:
       name: About
       pageRef: /about
       weight: 3
-    - name: Theme
+    - name: Search
       weight: 4
+      params:
+        type: search
+    - name: Theme
+      weight: 5
       params:
         type: theme-toggle
         label: "true"
-    - name: Search
-      weight: 5
-      params:
-        type: search
   sidebar:
     - name: More
       params:
