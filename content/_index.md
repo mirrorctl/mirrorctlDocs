@@ -8,9 +8,10 @@ layout: hextra-home
   imageTitle="mirrorctl - Sync Debian & Ubuntu repositories"
   imageWidth="300"
 >}}
-{{< hextra/hero-badge link="/docs/reference/releases/mirrorctl-1.4.2-release-notes" >}}
+
+{{< hextra/hero-badge link="/docs/reference/releases/mirrorctl-1.5.0-release-notes" >}}
   <div class="hx-w-2 hx-h-2 hx-rounded-full hx-bg-primary-400"></div>
-  <span>Latest version: v1.4.2</span>
+  <span>Latest version: v1.5.0</span>
   {{< icon name="arrow-circle-right" attributes="height=14" >}}
 {{< /hextra/hero-badge >}}
 
@@ -92,6 +93,11 @@ Security-related highlights
   >}}
 
   {{< hextra/feature-card
+    title="TLS Validation"
+    subtitle="The application can validate upstream mirror TLS support, and allows you to configure minimum and maximum TLS versions. For advanced use cases, `mirrorctl` also supports custom certificate authorities, mutualTLS certificate/key combinations, specific cipher selections, and Server Name Identification (SNI) configurations."
+  >}}
+
+  {{< hextra/feature-card
     title="No Need to Generate Keys"
     subtitle="`mirrorctl` does not manipulate mirrors (for example, it doesn't merge packages from one repository into another), so the PGP keys provided by the upstream repositories are the only keys that you need to work with."
   >}}
@@ -99,11 +105,6 @@ Security-related highlights
   {{< hextra/feature-card
     title="Path and Symlink Protections"
     subtitle="`mirrorctl` also blocks directory traversal attempts, restricts symlinks to approved directories, and validates all file paths. This prevents malicious repository metadata from accessing files outside of prescribed boundaries."
-  >}}
-
-  {{< hextra/feature-card
-    title="TLS Validation"
-    subtitle="The application can validate upstream mirror TLS support, and allows you to configure minimum and maximum TLS versions. For advanced use cases, `mirrorctl` also supports custom certificate authorities, mutualTLS certificate/key combinations, specific cipher selections, and Server Name Identification (SNI) configurations."
   >}}
 
   {{< hextra/feature-card

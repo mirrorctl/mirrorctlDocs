@@ -15,6 +15,9 @@ params:
     logoWidth: 40
     logo:
       path: /mirrorctl-logo.png
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: full
 menu:
   main:
     - identifier: documentation
