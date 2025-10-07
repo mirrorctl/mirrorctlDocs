@@ -1,6 +1,6 @@
 ---
 title: snapshot delete
-weight: 10
+weight: 11
 ---
 
 ## The `snapshot delete` command
@@ -45,11 +45,11 @@ key defined in the `[mirrors]` section of your configuration file.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
-| `--force` | | `false` | Delete snapshot even if it is currently published or staged. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| `--force` | `false` | Delete snapshot even if it is currently published or staged. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
 ## Exit Status
 

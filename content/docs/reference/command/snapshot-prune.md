@@ -1,6 +1,6 @@
 ---
 title: snapshot prune
-weight: 11
+weight: 10
 ---
 
 ## The `snapshot prune` command
@@ -59,13 +59,13 @@ will be pruned.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
-| `--keep-last` | | `0` | Number of most recent snapshots to keep. Overrides configuration file setting. |
-| `--keep-within` | | | Keep snapshots within the specified duration (e.g., "30d", "1w"). Overrides configuration file setting. |
-| `--dry-run` | | `false` | Show what would be deleted without actually deleting snapshots. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| `--keep-last` | `0` | Number of most recent snapshots to keep. Overrides configuration file setting. |
+| `--keep-within` | | Keep snapshots within the specified duration (e.g., "30d", "1w"). Overrides configuration file setting. |
+| `--dry-run` | `false` | Show what would be deleted without actually deleting snapshots. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
 ### Duration Format
 

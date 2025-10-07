@@ -51,10 +51,10 @@ This command takes no arguments.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file to validate. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file to validate. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
 ## Exit Status
 

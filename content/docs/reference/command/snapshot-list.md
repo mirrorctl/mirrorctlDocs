@@ -1,6 +1,6 @@
 ---
 title: snapshot list
-weight: 6
+weight: 9
 ---
 
 ## The `snapshot list` command
@@ -48,11 +48,11 @@ will be listed.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
-| `--detailed` | | `false` | Show detailed snapshot information including size and file count. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| `--detailed` | `false` | Show detailed snapshot information including size and file count. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
 ## Output
 

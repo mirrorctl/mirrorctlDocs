@@ -36,9 +36,9 @@ mirrorctl check tls debian --config /path/to/custom.toml
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
 
 ## Output
 

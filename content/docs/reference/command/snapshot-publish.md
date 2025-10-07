@@ -1,6 +1,6 @@
 ---
 title: snapshot publish
-weight: 7
+weight: 8
 ---
 
 ## The `snapshot publish` command
@@ -39,10 +39,10 @@ in the `[mirrors]` section of your configuration file.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
 ## Exit Status
 

@@ -50,12 +50,12 @@ according to the mirror's snapshot configuration.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
-| `--force` | | `false` | Overwrite existing snapshot with the same name. |
-| `--stage` | | `false` | Publish the snapshot to staging after creation. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| `--force` | `false` | Overwrite existing snapshot with the same name. |
+| `--stage` | `false` | Publish the snapshot to staging after creation. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
 ## Exit Status
 

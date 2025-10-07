@@ -1,21 +1,20 @@
 ---
 title: sync
 weight: 1
+toc: false
 ---
 
-## The `sync` command
-
-Synchronizes one or more APT repositories based on the provided configuration.
+The `sync` command initiates the download of external repositories, creating local mirrors of 
+those repositories.
 
 ```bash
 mirrorctl sync [mirror-ids...] [flags]
 ```
 
-The `sync` command downloads and maintains local mirrors of APT repositories.
 
 1. It reads configuration from a TOML file (default: `/etc/mirrorctl/mirror.toml`)
 1. It then synchronizes either
-   - all of configured repositories (if no mirror IDs are provided), or
+   - all of configured repositories (if no mirror IDs are provided in the command), or
    - the individual repository / repositories that are provided as part of the sync command.
 
 ## Usage
@@ -72,17 +71,16 @@ synchronized.
 
 ## Flags
 
-| Name | Shorthand | Default | Usage |
-|------|-----------|---------|-------|
-| `--config` | `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
-| `--log-level` | `-l` | (from configuration file) | Override the log level specified in the configuration file. |
-| `--verbose-errors` | | `false` | Show detailed error information including stack traces. |
-| `--quiet` | `-q` | `false` | Suppress all output except for errors. |
-| `--dry-run` | | `false` | Calculate and report disk usage requirements without actually downloading any files. |
-| `--no-pgp-check` | | `false` | Disable PGP signature verification on Release files. Use for testing only. |
-| `--force` | | `false` | Overwrite the snapshot if it already exists. |
-| `--help` | `-h` | `false` | Display help information for the `sync` command. |
-
+| Flag | Default | Usage |
+|------|---------|-------|
+| `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
+| `--log-level`, `-l` | (from configuration file) | Override the log level specified in the configuration file. |
+| `--verbose-errors` | `false` | Show detailed error information including stack traces. |
+| `--quiet`, `-q` | `false` | Suppress all output except for errors. |
+| `--dry-run` | `false` | Calculate and report disk usage requirements without actually downloading any files. |
+| `--no-pgp-check` | `false` | Disable PGP signature verification on Release files. Use for testing only. |
+| `--force` | `false` | Overwrite the snapshot if it already exists. |
+| `--help`, `-h` | `false` | Display help information for the `sync` command. |
 
 ## Exit Status
 
