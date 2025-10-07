@@ -1,0 +1,242 @@
+/* Custom dark-mode styling for mirrorctl documentation */
+
+/* Import JetBrains Mono font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  /* Primary color: Soft blue-gray #a5c0d3 (HSL: 204deg, 38%, 74%) */
+  --primary-hue: 204deg;
+  --primary-saturation: 38%;
+  --primary-lightness: 74%;
+  --primary-background-color: 28 32 42;
+}
+
+html,
+body {
+  font-family: 'Epunda Sans', sans-serif;
+}
+
+/* Ensure code blocks also use Inconsolata */
+code,
+pre,
+kbd,
+samp,
+.hextra-code-block pre,
+.hextra-code-block code {
+  font-family: 'Inconsolata', monospace;
+}
+
+/* Dark mode color system */
+.dark {
+  --primary-hue: 206deg;
+  --primary-saturation: 42%;
+  --primary-lightness: 68%;
+  --primary-background-color: 28 32 42;
+}
+
+/* Main background - deep slate blue */
+html {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+body:is(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+/* Header and footer - same as body */
+header:is(html[class~="dark"] *),
+footer:is(html[class~="dark"] *),
+.nav-container:is(html[class~="dark"] *),
+.hextra-nav-container:is(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
+}
+
+/* Sidebar background - slightly lighter for depth */
+@media (max-width: 767px) {
+  .sidebar-container:is(html[class~="dark"] *) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+  }
+}
+
+/* Navigation bar with blur effect */
+@supports (
+  ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)))
+) {
+  .nav-container-blur:is(html[class~="dark"] *) {
+    background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+  }
+}
+
+/* Steps component styling */
+.steps h3:is(html[class~="dark"] *):before {
+  --tw-border-opacity: 1;
+  border-color: rgb(var(--primary-background-color) / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(42 48 62 / var(--tw-bg-opacity));
+}
+
+/* Dark backgrounds */
+.dark\:hx-bg-dark:is(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+.dark\:hx-bg-dark\/50:is(html[class~="dark"] *) {
+  background-color: rgb(var(--primary-background-color) / 0.5);
+}
+
+.dark\:focus\:hx-bg-dark:focus:is(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+.dark\:hx-bg-neutral-900:is(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+/* Border colors - muted blue-gray */
+.dark\:hx-border-neutral-800:is(html[class~="dark"] *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 64 82 / var(--tw-border-opacity));
+}
+
+/* Shadow effects */
+.dark\:hx-shadow-\[0_-12px_16px_\#111\]:is(html[class~="dark"] *) {
+  --tw-shadow: 0 -12px 16px rgb(var(--primary-background-color));
+  --tw-shadow-colored: 0 -12px 16px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/**************************/
+
+/** Custom viewport heights **/
+.hx-max-h-\[calc\(100vh-var\(--navbar-height\)-env\(safe-area-inset-bottom\)\)\] {
+  max-height: calc(88vh - var(--navbar-height) - env(safe-area-inset-bottom));
+}
+
+.hx-min-h-\[calc\(100vh-var\(--navbar-height\)\)\] {
+  min-height: calc(88vh - var(--navbar-height));
+}
+
+@media (min-width: 768px) {
+  .md\:hx-h-\[calc\(100vh-var\(--navbar-height\)-var\(--menu-height\)\)\] {
+    height: calc(88vh - var(--navbar-height) - var(--menu-height));
+  }
+  .md\:hx-max-h-\[min\(calc\(100vh-5rem-env\(safe-area-inset-bottom\)\)\2c 400px\)\] {
+    max-height: min(calc(88vh - 5rem - env(safe-area-inset-bottom)), 400px);
+  }
+}
+/**************************/
+
+/** Link styling **/
+.mirrorctl-links {
+  --tw-text-opacity: 1;
+  color: hsl(var(--primary-hue) var(--primary-saturation) var(--primary-lightness) / var(--tw-text-opacity));
+  text-decoration-line: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+.mirrorctl-links:hover {
+  text-decoration-line: none;
+  color: hsl(var(--primary-hue) var(--primary-saturation) calc(var(--primary-lightness) + 8%) / var(--tw-text-opacity));
+}
+/**************************/
+
+/** Code blocks - dark slate blue matching theme **/
+.hextra-code-block pre:is(html[class~="dark"] *) {
+  background-color: rgb(22 26 36 / 0.6) !important;
+  border: 1px solid rgb(56 64 82 / 0.3);
+}
+
+.hextra-code-block .highlight pre:is(html[class~="dark"] *) {
+  background-color: rgb(22 26 36 / 0.6) !important;
+}
+
+.hextra-code-block pre {
+  background-color: hsl(220deg 13% 18% / 0.05);
+}
+/**************************/
+
+/** Badge components **/
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+              border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+a.badge:hover, a.badge:focus {
+  text-decoration: none;
+}
+
+.badge:empty {
+  display: none;
+}
+
+.badge-info {
+  text-transform: capitalize;
+  color: #f8f9fa;
+  background-color: hsl(var(--primary-hue) var(--primary-saturation) calc(var(--primary-lightness) - 20%));
+}
+
+a.badge-info:hover, a.badge-info:focus {
+  color: #ffffff;
+  background-color: hsl(var(--primary-hue) var(--primary-saturation) calc(var(--primary-lightness) - 30%));
+}
+
+a.badge-info:focus, a.badge-info.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem hsl(var(--primary-hue) var(--primary-saturation) var(--primary-lightness) / 0.5);
+}
+
+.badge-warning {
+  text-transform: capitalize;
+  color: #1a1d26;
+  background-color: #f4a261;
+}
+
+a.badge-warning:hover, a.badge-warning:focus {
+  color: #1a1d26;
+  background-color: #e76f51;
+}
+
+a.badge-warning:focus, a.badge-warning.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(244, 162, 97, 0.5);
+}
+/**************************/
+
+/** Image zoom overlay **/
+.medium-zoom-overlay {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
+}
+/**************************/
+
+/** Scrollbar styling for dark mode **/
+:is(html[class~="dark"] *)::-webkit-scrollbar-track {
+  background-color: rgb(var(--primary-background-color) / 0.3);
+}
+
+:is(html[class~="dark"] *)::-webkit-scrollbar-thumb {
+  background-color: rgb(56 64 82 / 0.6);
+  border-radius: 6px;
+}
+
+:is(html[class~="dark"] *)::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--primary-hue) var(--primary-saturation) calc(var(--primary-lightness) - 20%) / 0.7);
+}
+/**************************/
