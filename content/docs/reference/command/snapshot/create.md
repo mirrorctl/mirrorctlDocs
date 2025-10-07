@@ -65,8 +65,8 @@ The command exits with status `0` on success and `1` on error.
 
 - [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on snapshot
   configuration
-- [snapshot list]({{< relref "/docs/reference/command/snapshot-list" >}}) - List snapshots
-- [snapshot stage]({{< relref "/docs/reference/command/snapshot-stage" >}}) - Publish snapshot to
+- [snapshot list]({{< relref "/docs/reference/command/snapshot/list" >}}) - List snapshots
+- [snapshot stage]({{< relref "/docs/reference/command/snapshot/stage" >}}) - Publish snapshot to
   staging
-- [snapshot publish]({{< relref "/docs/reference/command/snapshot-publish" >}}) - Publish snapshot
+- [snapshot publish]({{< relref "/docs/reference/command/snapshot/publish" >}}) - Publish snapshot
   to production

@@ -64,6 +64,6 @@ The command exits with status `0` if the configuration is valid and `1` if valid
 
 - [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on TOML
   configuration file
-- [check tls]({{< relref "/docs/reference/command/check-tls" >}}) - Check TLS connectivity for a
+- [check tls]({{< relref "/docs/reference/command/check/tls" >}}) - Check TLS connectivity for a
   mirror
 - [sync]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories

@@ -3,6 +3,8 @@ title: Configuration
 weight: 1
 cascade:
   type: docs
+sidebar:
+  open: true
 ---
 
 The mirrorctl configuration file uses TOML format and defines how repositories are mirrored,
@@ -22,7 +24,7 @@ Below is a complete example configuration for mirroring Debian Trixie:
   
 ```toml
 # mirrorctl Configuration File
-dir = "/var/www/html/mirror"
+dir = "/var/www/html/mirror/"
 max_conns = 10
 
 [log]
@@ -85,7 +87,7 @@ keep_within = "60d"
 
 # Base directory where mirrored repositories will be stored
 # REQUIRED: Must be an absolute path
-dir = "/var/www/html/mirror"
+dir = "/var/www/html/mirror/"
 
 # Maximum number of concurrent connections per mirror
 # Optional: Default is 10
@@ -241,11 +243,11 @@ keep_within = "60d"
 
 ## Minimal Configuration Example
 
-There's a lot configured there, but not all of it is required. If you want to go with defaults,
-here is a minimal configuration for Debian Trixie that works as-is:
+There's a lot configured in the example above, but not each item is required. If you want a less
+complicated example, here is a minimal configuration for Debian Trixie:
 
 ```toml
-dir = "/var/www/html/mirror"
+dir = "/var/www/html/mirror/"
 
 [mirrors.debian-trixie]
 url = "https://deb.debian.org/debian/"
@@ -256,106 +258,8 @@ mirror_source = true
 no_pgp_check = true
 ```
 
-## Configuration Sections
-
-### Global Settings
-
-| Setting | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `dir` | string | Yes | - | Base directory for mirrored repositories |
-| `max_conns` | integer | No | `10` | Maximum concurrent connections per mirror |
-
-### Logging Configuration
-
-Configure logging behavior under the `[log]` section:
-
-| Setting | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `level` | string | No | `"info"` | Log level: `debug`, `info`, `warn`, `error` |
-| `format` | string | No | `"text"` | Log format: `text`, `plain`, `json` |
-
-### TLS Configuration
-
-Configure TLS/SSL settings under the `[tls]` section:
-
-| Setting | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `min_version` | string | No | `"1.2"` | Minimum TLS version: `"1.2"` or `"1.3"` |
-| `max_version` | string | No | - | Maximum TLS version: `"1.2"` or `"1.3"` |
-| `insecure_skip_verify` | boolean | No | `false` | Skip certificate verification (testing only) |
-| `ca_cert_file` | string | No | - | Path to custom CA certificate file |
-| `client_cert_file` | string | No | - | Client certificate for mutual TLS |
-| `client_key_file` | string | No | - | Client private key for mutual TLS |
-| `cipher_suites` | array | No | Go defaults | List of allowed cipher suites |
-| `server_name` | string | No | - | Server name for SNI |
-
-### Snapshot Configuration
-
-Configure snapshot behavior under the `[snapshot]` section:
-
-| Setting | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `path` | string | No | `/var/lib/mirrorctl/snapshots` | Base path for snapshots |
-| `default_name_format` | string | No | `"2006-01-02T15-04-05Z"` | Default snapshot name format (Go time format) |
-
-#### Snapshot Pruning
-
-Configure retention policy under `[snapshot.prune]`:
-
-| Setting | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `keep_last` | integer | No | `5` | Number of recent snapshots to keep |
-| `keep_within` | string | No | - | Keep snapshots within duration (e.g., `"30d"`, `"2w"`) |
-
-
-#### Per-Mirror Filters
-
-Configure package filtering under `[mirrors.<mirror-id>.filters]`:
-
-| Setting | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `keep_versions` | integer | No | `0` | Number of package versions to keep (0 = all) |
-| `exclude_patterns` | array | No | `[]` | Regex patterns for excluding packages |
-
-#### Per-Mirror TLS Configuration
-
-Override global TLS settings under `[mirrors.<mirror-id>.tls]` using the same settings as the global `[tls]` section.
-
-#### Per-Mirror Snapshot Configuration
-
-Override global snapshot settings under `[mirrors.<mirror-id>.snapshot]` and `[mirrors.<mirror-id>.snapshot.prune]` using the same settings as the global snapshot sections.
-
-
-## Flat Repository Example
-
-For flat repositories (repositories without sections/architectures), append `/` to the suite name:
-
-```toml
-dir = "/var/www/apt"
-
-[mirrors.debian-experimental]
-url = "https://deb.debian.org/debian/"
-suites = ["experimental/"]
-# sections and architectures are not used for flat repositories
-```
-
-## Validation
-
-Use the `check config` command to validate your configuration file:
-
-```bash
-mirrorctl check config
-```
-
-This will verify:
-- TOML syntax
-- Required fields
-- File paths (PGP keys, TLS certificates)
-- TLS configuration
-- Repository structure
-
 ## See Also
 
 - [sync command]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories
-- [check config command]({{< relref "/docs/reference/command/check-config" >}}) - Validate configuration
+- [check config command]({{< relref "/docs/reference/command/check/config" >}}) - Validate configuration
 - [Environment Variables]({{< relref "/docs/reference/env-vars" >}}) - Environment variable reference

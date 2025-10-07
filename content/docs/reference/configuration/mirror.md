@@ -18,3 +18,34 @@ Each mirror is configured under `[mirrors.<mirror-id>]`:
 | `publish_to_staging` | boolean | No | `false` | Automatically publish syncs to staging |
 
 \* Not required for flat repositories
+
+#### Per-Mirror Filters
+
+Configure package filtering under `[mirrors.<mirror-id>.filters]`:
+
+| Setting | Type | Required | Default | Description |
+|---------|------|----------|---------|-------------|
+| `keep_versions` | integer | No | `0` | Number of package versions to keep (0 = all) |
+| `exclude_patterns` | array | No | `[]` | Regex patterns for excluding packages |
+
+#### Per-Mirror TLS Configuration
+
+Override global TLS settings under `[mirrors.<mirror-id>.tls]` using the same settings as the global `[tls]` section.
+
+#### Per-Mirror Snapshot Configuration
+
+Override global snapshot settings under `[mirrors.<mirror-id>.snapshot]` and `[mirrors.<mirror-id>.snapshot.prune]` using the same settings as the global snapshot sections.
+
+
+## Flat Repository Example
+
+For flat repositories (repositories without sections/architectures), append `/` to the suite name:
+
+```toml
+dir = "/var/www/apt"
+
+[mirrors.debian-experimental]
+url = "https://deb.debian.org/debian/"
+suites = ["experimental/"]
+# sections and architectures are not used for flat repositories
+```

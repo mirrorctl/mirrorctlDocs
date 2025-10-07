@@ -68,6 +68,6 @@ The command exits with status `0` on success and `1` if the mirror is not found 
   configuration
 - [Environment Variables]({{< relref "/docs/reference/env-vars" >}}) - TLS-related environment
   variables
-- [check config]({{< relref "/docs/reference/command/check-config" >}}) - Validate configuration
+- [check config]({{< relref "/docs/reference/command/check/config" >}}) - Validate configuration
   file
 - [sync]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories

@@ -58,7 +58,7 @@ command will continue attempting to delete remaining snapshots even if one fails
 
 ## See Also
 
-- [snapshot create]({{< relref "/docs/reference/command/snapshot-create" >}}) - Create a snapshot
-- [snapshot list]({{< relref "/docs/reference/command/snapshot-list" >}}) - List snapshots
-- [snapshot prune]({{< relref "/docs/reference/command/snapshot-prune" >}}) - Automatically remove
+- [snapshot create]({{< relref "/docs/reference/command/snapshot/create" >}}) - Create a snapshot
+- [snapshot list]({{< relref "/docs/reference/command/snapshot/list" >}}) - List snapshots
+- [snapshot prune]({{< relref "/docs/reference/command/snapshot/prune" >}}) - Automatically remove
   old snapshots

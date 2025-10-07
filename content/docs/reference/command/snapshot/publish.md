@@ -52,9 +52,9 @@ The command exits with status `0` on success and `1` on error.
 
 - [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on snapshot
   configuration
-- [snapshot create]({{< relref "/docs/reference/command/snapshot-create" >}}) - Create a snapshot
-- [snapshot list]({{< relref "/docs/reference/command/snapshot-list" >}}) - List snapshots
-- [snapshot stage]({{< relref "/docs/reference/command/snapshot-stage" >}}) - Publish snapshot to
+- [snapshot create]({{< relref "/docs/reference/command/snapshot/create" >}}) - Create a snapshot
+- [snapshot list]({{< relref "/docs/reference/command/snapshot/list" >}}) - List snapshots
+- [snapshot stage]({{< relref "/docs/reference/command/snapshot/stage" >}}) - Publish snapshot to
   staging
-- [snapshot promote]({{< relref "/docs/reference/command/snapshot-promote" >}}) - Promote staged
+- [snapshot promote]({{< relref "/docs/reference/command/snapshot/promote" >}}) - Promote staged
   snapshot to production
