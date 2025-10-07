@@ -7,7 +7,7 @@ module:
 params:
   description: An admin-friendly mirror-syncing utility for Debian software repositories
   theme:
-    default: system
+    default: light
     displayToggle: true
   navbar:
     displayTitle: true
@@ -17,7 +17,7 @@ params:
       path: /mirrorctl-logo.png
   page:
     # full (100%), wide (90rem), normal (1280px)
-    width: full
+    width: wide
 menu:
   main:
     - identifier: documentation
