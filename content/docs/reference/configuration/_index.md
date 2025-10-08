@@ -78,7 +78,7 @@ keep_within = "60d"
 ```  
 {{< /tab >}}
 
-  {{< tab >}}
+{{< tab >}}
 ```toml
 # mirrorctl Configuration File
 

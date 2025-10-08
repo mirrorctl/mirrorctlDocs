@@ -1,5 +1,5 @@
 ---
-title: Global configuration
+title: global
 ---
 
 ### Global Settings Reference

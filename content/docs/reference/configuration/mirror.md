@@ -1,5 +1,5 @@
 ---
-title: Mirror Configuration
+title: mirror
 ---
 
 ### Mirror Configuration

@@ -1,5 +1,5 @@
 ---
-title: Snapshot Configuration
+title: snapshot
 ---
 
 ### Snapshot Configuration
