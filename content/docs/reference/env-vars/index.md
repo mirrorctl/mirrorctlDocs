@@ -3,10 +3,10 @@ title: Environment Variables
 weight: 3
 ---
 
-## Environment Variables
-
 Environment variables override the corresponding values in the configuration file. This allows for
 runtime customization without modifying the TOML configuration.
+
+Using environtment variables is particularly useful in CI/CD and container-related environments.
 
 ## General Configuration
 

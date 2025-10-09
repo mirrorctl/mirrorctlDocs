@@ -3,16 +3,14 @@ title: snapshot publish
 weight: 8
 ---
 
-## The `snapshot publish` command
+The `mirrorctl snapshot publish` command publishes a specific snapshot to the production
+environment.
 
-Publish a snapshot to production.
+This updates the production symbolic link to point to the specified snapshot.
 
 ```bash
 mirrorctl snapshot publish <mirror-id> <snapshot-name> [flags]
 ```
-
-The `snapshot publish` command publishes a specific snapshot to the production environment by
-updating the symbolic link defined in your snapshot configuration.
 
 ## Usage
 
@@ -28,14 +26,10 @@ mirrorctl snapshot publish debian "stable" --config /path/to/custom.toml
 
 ## Arguments
 
-### <mirror-id>
-
-**Required.** The ID of the mirror containing the snapshot. The mirror ID must match a key defined
-in the `[mirrors]` section of your configuration file.
-
-### <snapshot-name>
-
-**Required.** The name of the snapshot to publish to production. The snapshot must exist.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-id` | Yes | The ID of the mirror containing the snapshot. <br/> The mirror ID must match a key defined in the `[mirrors]` section of your configuration file. |
+| `snapshot-name` | Yes | The name of the snapshot to publish to production. <br/> The snapshot must exist. |
 
 ## Flags
 

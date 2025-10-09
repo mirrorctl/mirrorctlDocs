@@ -3,16 +3,14 @@ title: snapshot list
 weight: 9
 ---
 
-## The `snapshot list` command
+The `mirrorctl snapshot list` command displays all snapshots for one or more mirrors.
 
-List snapshots for one or more mirrors.
+Use this command to see which snapshots are available and their current status (production,
+staging, or unmarked).
 
 ```bash
 mirrorctl snapshot list [mirror-ids...] [flags]
 ```
-
-The `snapshot list` command displays all snapshots for the specified mirrors. If no mirror IDs are
-provided, snapshots for all configured mirrors are listed.
 
 ## Usage
 
@@ -23,12 +21,12 @@ mirrorctl snapshot list
 
 List snapshots for a specific mirror:
 ```bash
-mirrorctl snapshot list debian
+mirrorctl snapshot list debian-trixie
 ```
 
 List snapshots for multiple mirrors:
 ```bash
-mirrorctl snapshot list debian debian-security
+mirrorctl snapshot list debian-trixie debian-trixie-security
 ```
 
 Show detailed snapshot information:
@@ -38,13 +36,9 @@ mirrorctl snapshot list --detailed
 
 ## Arguments
 
-### [mirror-ids...]
-
-Optional list of mirror IDs to list snapshots for. Mirror IDs must match the keys defined in the
-`[mirrors]` section of your configuration file.
-
-If no mirror IDs are specified, snapshots for all repositories defined in the configuration file
-will be listed.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-ids` | No | Optional list of mirror IDs to list snapshots for. <br/> Mirror IDs must match the keys defined in the `[mirrors]` section of your configuration file. <br/> If not specified, snapshots for all mirrors will be listed. |
 
 ## Flags
 
@@ -58,11 +52,11 @@ will be listed.
 
 For each mirror, the command displays:
 
-### Standard Output
+**Standard Output:**
 - Snapshot name
 - Status (production, staging, or unmarked)
 
-### Detailed Output (with --detailed flag)
+**Detailed Output (with --detailed flag):**
 - Snapshot name
 - Status (production, staging, or unmarked)
 - Total size in bytes
@@ -80,4 +74,3 @@ The command exits with status `0` on success and `1` on error.
 - [snapshot stage]({{< relref "/docs/reference/command/snapshot/stage" >}}) - Publish snapshot to
   staging
 - [snapshot delete]({{< relref "/docs/reference/command/snapshot/delete" >}}) - Delete snapshots
-  

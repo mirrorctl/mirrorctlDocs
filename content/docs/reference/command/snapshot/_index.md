@@ -3,8 +3,6 @@ title: snapshot
 weight: 2
 ---
 
-# snapshot
-
 Manage repository snapshots for staging and production workflows.
 
 - [snapshot create]({{< relref "create" >}}) - Create new snapshot

@@ -3,17 +3,12 @@ title: snapshot prune
 weight: 10
 ---
 
-## The `snapshot prune` command
-
-Remove old snapshots according to retention policy.
+The `mirrorctl snapshot prune` command removes old snapshots according to the configured retention
+policy or based on command-line flags that override that policy.
 
 ```bash
 mirrorctl snapshot prune [mirror-ids...] [flags]
 ```
-
-The `snapshot prune` command automatically removes old snapshots based on retention policies. It
-can use either the retention policy configured for each mirror or override it with command-line
-flags.
 
 ## Usage
 
@@ -49,13 +44,9 @@ mirrorctl snapshot prune debian --dry-run
 
 ## Arguments
 
-### [mirror-ids...]
-
-Optional list of mirror IDs to prune snapshots for. Mirror IDs must match the keys defined in the
-`[mirrors]` section of your configuration file.
-
-If no mirror IDs are specified, snapshots for all repositories defined in the configuration file
-will be pruned.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-ids` | No | Optional list of mirror IDs to prune snapshots for. <br/> Mirror IDs must match the keys defined in the `[mirrors]` section of your configuration file. <br/> If not specified, snapshots for all mirrors will be pruned. |
 
 ## Flags
 
@@ -67,7 +58,7 @@ will be pruned.
 | `--dry-run` | `false` | Show what would be deleted without actually deleting snapshots. |
 | `--verbose-errors` | `false` | Show detailed error information including stack traces. |
 
-### Duration Format
+## Duration Format
 
 The `--keep-within` flag accepts duration strings with the following suffixes:
 - `d` - days (e.g., "30d" = 30 days)
@@ -82,8 +73,7 @@ Snapshots are protected from pruning if they meet any of the following criteria:
 - Currently published to production
 - Currently published to staging
 
-When both `--keep-last` and `--keep-within` are specified, a snapshot is kept if it matches either
-criterion.
+When both `--keep-last` and `--keep-within` are specified, a snapshot is kept if it matches either criterion.
 
 ## Exit Status
 

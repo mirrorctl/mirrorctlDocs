@@ -3,17 +3,14 @@ title: snapshot promote
 weight: 7
 ---
 
-## The `snapshot promote` command
+The `mirrorctl snapshot promote` command promotes the currently staged snapshot to production.
 
-Promote the currently staged snapshot to production.
+This is part of a workflow where snapshots are tested in staging before being promoted to
+production.
 
 ```bash
 mirrorctl snapshot promote <mirror-id> [flags]
 ```
-
-The `snapshot promote` command promotes the snapshot currently published to staging to the
-production environment. This provides a safe workflow where snapshots can be tested in staging
-before being promoted to production.
 
 ## Usage
 
@@ -29,11 +26,9 @@ mirrorctl snapshot promote debian --config /path/to/custom.toml
 
 ## Arguments
 
-### <mirror-id>
-
-**Required.** The ID of the mirror to promote. The mirror ID must match a key defined in the
-`[mirrors]` section of your configuration file. A snapshot must already be published to staging
-for this mirror.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-id` | Yes | The ID of the mirror to promote. <br/> The mirror ID must match a key defined in the `[mirrors]` section of your configuration file. <br/> A snapshot must already be published to staging for this mirror. |
 
 ## Flags
 

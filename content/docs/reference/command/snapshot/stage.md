@@ -3,16 +3,13 @@ title: snapshot stage
 weight: 6
 ---
 
-## The `snapshot stage` command
+The `mirrorctl snapshot stage` command publishes a specific snapshot to the staging environment.
 
-Publish a snapshot to the staging environment.
+This allows you to test a snapshot before promoting it to production.
 
 ```bash
 mirrorctl snapshot stage <mirror-id> <snapshot-name> [flags]
 ```
-
-The `snapshot stage` command publishes a specific snapshot to the staging environment by updating
-the staging symbolic link defined in your snapshot configuration.
 
 ## Usage
 
@@ -28,14 +25,10 @@ mirrorctl snapshot stage debian "testing" --config /path/to/custom.toml
 
 ## Arguments
 
-### <mirror-id>
-
-**Required.** The ID of the mirror containing the snapshot. The mirror ID must match a key defined
-in the `[mirrors]` section of your configuration file.
-
-### <snapshot-name>
-
-**Required.** The name of the snapshot to publish to staging. The snapshot must exist.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-id` | Yes | The ID of the mirror containing the snapshot. <br/> The mirror ID must match a key defined in the `[mirrors]` section of your configuration file. |
+| `snapshot-name` | Yes | The name of the snapshot to publish to staging. <br/> The snapshot must exist. |
 
 ## Flags
 

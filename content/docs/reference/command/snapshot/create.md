@@ -3,32 +3,29 @@ title: snapshot create
 weight: 5
 ---
 
-## The `snapshot create` command
+The `mirrorctl snapshot create` command creates a new hardlink-based snapshot of a mirror.
 
-Create a new snapshot of a mirror.
+It's a fundatmental part of maintain multiple versions of a respository.
 
 ```bash
 mirrorctl snapshot create <mirror-id> [snapshot-name] [flags]
 ```
 
-The `snapshot create` command creates a hardlink-based snapshot of a mirror. Snapshots allow you
-to maintain multiple versions of a repository for staging and production workflows.
-
 ## Usage
 
 Create a snapshot with an auto-generated name:
 ```bash
-mirrorctl snapshot create debian
+mirrorctl snapshot create debian-trixie
 ```
 
 Create a snapshot with a custom name:
 ```bash
-mirrorctl snapshot create debian "2024-01-15-stable"
+mirrorctl snapshot create debian-trixie "2025-10-09-stable"
 ```
 
 Create a snapshot and immediately publish it to staging:
 ```bash
-mirrorctl snapshot create debian --stage
+mirrorctl snapshot create debian-trixie --stage
 ```
 
 Overwrite an existing snapshot:
@@ -38,15 +35,10 @@ mirrorctl snapshot create debian "backup" --force
 
 ## Arguments
 
-### <mirror-id>
-
-**Required.** The ID of the mirror to snapshot. The mirror ID must match a key defined in the
-`[mirrors]` section of your configuration file.
-
-### [snapshot-name]
-
-Optional name for the snapshot. If not provided, a timestamp-based name will be auto-generated
-according to the mirror's snapshot configuration.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-id` | Yes | The ID of the mirror to check. <br/> The mirror ID must match a key defined in the `[mirrors]` section of your configuration file. |
+| `snapshot-name` | No | Optional name for the snapshot. <br /> If not provided, a timestamp-based name will be auto-generated according to the mirror's snapshot configuration. |
 
 ## Flags
 

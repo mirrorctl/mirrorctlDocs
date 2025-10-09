@@ -3,17 +3,14 @@ title: snapshot delete
 weight: 11
 ---
 
-## The `snapshot delete` command
+The `mirrorctl snapshot delete` command permanently removes one or more snapshots from a mirror.
 
-Delete one or more snapshots.
+By default, it will not delete snapshots that are currently published to staging or production
+unless the `--force` flag is used.
 
 ```bash
 mirrorctl snapshot delete <mirror-id> <snapshot-name...> [flags]
 ```
-
-The `snapshot delete` command permanently removes one or more snapshots from a mirror. By default,
-it will not delete snapshots that are currently published to staging or production unless the
-`--force` flag is used.
 
 ## Usage
 
@@ -34,14 +31,10 @@ mirrorctl snapshot delete debian "current" --force
 
 ## Arguments
 
-### <mirror-id>
-
-**Required.** The ID of the mirror containing the snapshots to delete. The mirror ID must match a
-key defined in the `[mirrors]` section of your configuration file.
-
-### <snapshot-name...>
-
-**Required.** One or more snapshot names to delete. At least one snapshot name must be provided.
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-id` | Yes | The ID of the mirror containing the snapshots to delete. <br/> The mirror ID must match a key defined in the `[mirrors]` section of your configuration file. |
+| `snapshot-name` | Yes | One or more snapshot names to delete. <br/> At least one snapshot name must be provided. |
 
 ## Flags
 
@@ -53,8 +46,10 @@ key defined in the `[mirrors]` section of your configuration file.
 
 ## Exit Status
 
-The command exits with status `0` on success and `1` on error. If deleting multiple snapshots, the
-command will continue attempting to delete remaining snapshots even if one fails.
+The command exits with status `0` on success and `1` on error.
+
+If deleting multiple snapshots, the command will continue attempting to delete remaining
+snapshots even if one fails.
 
 ## See Also
 
