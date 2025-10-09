@@ -4,7 +4,7 @@ weight: 4
 cascade:
   type: docs
 sidebar:
-  open: true
+  open: false
 ---
 
 # Release Notes

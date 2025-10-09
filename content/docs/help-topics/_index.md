@@ -1,6 +1,6 @@
 ---
-title: Troubleshoot
-weight: 4
+title: Help Topics
+weight: 3
 cascade:
   type: docs
 ---

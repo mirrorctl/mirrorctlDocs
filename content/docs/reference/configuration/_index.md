@@ -4,7 +4,7 @@ weight: 1
 cascade:
   type: docs
 sidebar:
-  open: true
+  open: false
 ---
 
 The mirrorctl configuration file uses TOML format and defines how repositories are mirrored,

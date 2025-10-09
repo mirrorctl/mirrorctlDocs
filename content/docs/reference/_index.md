@@ -1,10 +1,10 @@
 ---
 title: Reference
-weight: 4
+weight: 5
 cascade:
   type: docs
 sidebar:
-  open: true
+  open: false
 ---
 
 # Reference
