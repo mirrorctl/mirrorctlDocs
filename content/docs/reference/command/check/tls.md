@@ -3,36 +3,30 @@ title: check tls
 weight: 4
 ---
 
-## The `check tls` command
-
-Check TLS configuration and capabilities for a mirror.
+The `mirrorctl check tls` command checks a mirror's TLS configuration and capabilities.
 
 ```bash
 mirrorctl check tls <mirror-id> [flags]
 ```
 
-The `check tls` command performs a detailed TLS handshake and certificate check against the remote
-server for a configured mirror. This helps diagnose TLS connection issues by testing supported TLS
-versions, negotiated cipher suites, and examining the certificate chain.
+This command is helpful when you want to know what TLS versions and cipher suites are supported,
+as well as when you want to verify a server's certificate chain.
 
 ## Usage
 
-Check TLS configuration for a specific mirror:
-```bash
-mirrorctl check tls debian
-```
+Here's an example that checks the TLS configuration for a `debian-trixie` mirror using a custom
+configuration file:
 
-Use a custom configuration file:
 ```bash
-mirrorctl check tls debian --config /path/to/custom.toml
+mirrorctl check tls debian-trixie --config /path/to/custom.toml
 ```
 
 ## Arguments
 
-### <mirror-id>
+| Argument | Required | Description |
+|------|---------|-------|
+| `mirror-id` | Yes | The ID of the mirror to check. <br/> The mirror ID must match a key defined in the `[mirrors]` section of your configuration file. |
 
-**Required.** The ID of the mirror to check. The mirror ID must match a key defined in the
-`[mirrors]` section of your configuration file.
 
 ## Flags
 
@@ -42,21 +36,33 @@ mirrorctl check tls debian --config /path/to/custom.toml
 
 ## Output
 
-The command displays the following information:
+```
+$ mirrorctl check tls debian-trixie
+Checking TLS status for mirror 'debian-trixie' (deb.debian.org:443)...
 
-### TLS Version Support
-Tests connectivity with each TLS version (1.0, 1.1, 1.2, 1.3) and reports whether the remote
-server supports each version.
+[+] TLS Version Support:
+    TLS 1.0: Not Supported (remote error: tls: protocol version not supported)
+    TLS 1.1: Not Supported (remote error: tls: protocol version not supported)
+    TLS 1.2: Supported
+    TLS 1.3: Supported
 
-### Connection Details
-Shows the negotiated TLS version and cipher suite when connecting with your current configuration
-settings.
+[+] Connection Details:
+    Negotiated Version: TLS 1.3
+    Negotiated Cipher:  TLS_AES_128_GCM_SHA256
 
-### Server Certificate Chain
-Displays information about each certificate in the server's certificate chain:
-- Subject (Common Name)
-- Issuer (Common Name)
-- Expiration date
+[+] Server Certificate Chain:
+    - Cert 0:
+      Subject:  cdn-fastly.deb.debian.org
+      Issuer:   R12
+      Expires:  2025-12-12T00:56:07Z
+
+    - Cert 1:
+      Subject:  R12
+      Issuer:   ISRG Root X1
+      Expires:  2027-03-12T23:59:59Z
+
+TLS check complete.
+```
 
 ## Exit Status
 
