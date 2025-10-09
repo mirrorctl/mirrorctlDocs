@@ -1,19 +1,17 @@
 ---
-title: check config
+title: config
 weight: 3
 ---
 
-## The `check config` command
+The `mirrorctl check config` command validates the configuration file and reports any issues.
 
-Validate the configuration file and report any issues.
+This command is helpful when you're creating a mirrorctl configuration file and want to validate
+it before attempting to use it. It checks for syntax errors, validates all configuration sections,
+and ensures that referenced files (like PGP keys) exist and are accessible.
 
 ```bash
 mirrorctl check config [flags]
 ```
-
-The `check config` command validates your TOML configuration file without performing any mirroring
-operations. It checks for syntax errors, validates all configuration sections, and ensures that
-referenced files (like PGP keys) exist and are accessible.
 
 ## Validation Checks
 
@@ -31,16 +29,19 @@ The command performs the following validation checks:
 ## Usage
 
 Validate the default configuration file:
+
 ```bash
 mirrorctl check config
-```env-vars
+```
 
 Validate a custom configuration file:
+
 ```bash
 mirrorctl check config --config /path/to/custom.toml
 ```
 
 Show detailed validation errors:
+
 ```bash
 mirrorctl check config --verbose-errors
 ```
@@ -55,6 +56,22 @@ This command takes no arguments.
 |------|---------|-------|
 | `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file to validate. |
 | `--verbose-errors` | `false` | Show detailed error information including stack traces. |
+
+## Output
+
+Example of a successful configuration check:
+
+```
+$ mirrorctl check config                 
+time=2025-10-09T10:27:41.551-05:00 level=INFO msg="the toml configuration file passes validation checks"
+```
+
+Example of a failed configuration check:
+
+```
+$ mirrorctl check config             
+2025/10/09 10:29:10 ERROR configuration validation failed error="configuration contains unknown sections: [mirrors.debian-trixie.sweets]\nThese sections don't match any expected configuration structure." path=/etc/mirrorctl/mirror.toml
+```
 
 ## Exit Status
 

@@ -3,9 +3,11 @@ title: check
 weight: 3
 ---
 
-# check
+The `mirrorctl check` command doesn't do anything by itself. It requires usage of subcommands.
 
-Validate configuration and connectivity.
+Supported `mirrorctl check` subcommands are:
 
-- [check config]({{< relref "config" >}}) - Validate configuration file
-- [check tls]({{< relref "tls" >}}) - Check TLS configuration and certificate
+- [config]({{< relref "config" >}}) - Validate configuration file
+- [tls]({{< relref "tls" >}}) - Check TLS configuration and certificate
+
+See each subcommand's reference page for further information.

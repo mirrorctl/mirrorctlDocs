@@ -1,16 +1,16 @@
 ---
-title: check tls
+title: tls
 weight: 4
 ---
 
 The `mirrorctl check tls` command checks a mirror's TLS configuration and capabilities.
 
+This command is helpful when you want to know what TLS versions and cipher suites are supported,
+as well as when you want to verify a server's certificate chain.
+
 ```bash
 mirrorctl check tls <mirror-id> [flags]
 ```
-
-This command is helpful when you want to know what TLS versions and cipher suites are supported,
-as well as when you want to verify a server's certificate chain.
 
 ## Usage
 
@@ -35,6 +35,9 @@ mirrorctl check tls debian-trixie --config /path/to/custom.toml
 | `--config`, `-c` | `/etc/mirrorctl/mirror.toml` | Path to the configuration file. |
 
 ## Output
+
+This example assumes a configuration file is present at the default location,
+`/etc/mirrorctl/mirror.toml`.
 
 ```
 $ mirrorctl check tls debian-trixie
