@@ -56,3 +56,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
+    style: monokailight

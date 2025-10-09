@@ -4,11 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-  /* Primary color: Soft blue-gray #a5c0d3 (HSL: 204deg, 38%, 74%) */
-  --primary-hue: 204deg;
-  --primary-saturation: 38%;
-  --primary-lightness: 74%;
-  --primary-background-color: 28 32 42;
+  /* Light theme: mdBook light theme colors */
+  --primary-hue: 207deg;
+  --primary-saturation: 66%;
+  --primary-lightness: 37%;
+  --primary-background-color: 255 255 255; /* hsl(0, 0%, 100%) - white */
+  --light-sidebar-bg: 250 250 250; /* #fafafa */
+  --light-border-color: 204 204 204; /* #cccccc */
+  --light-icon-color: 116 116 116; /* #747474 */
+  --light-scrollbar-color: 143 143 143; /* #8F8F8F */
 }
 
 html,
@@ -26,12 +30,20 @@ samp,
   font-family: 'Inconsolata', monospace;
 }
 
+/* Light mode color system */
+html:not(.dark) {
+  --primary-hue: 207deg;
+  --primary-saturation: 66%;
+  --primary-lightness: 37%;
+  --primary-background-color: 255 255 255; /* white bg */
+}
+
 /* Dark mode color system */
 .dark {
-  --primary-hue: 206deg;
-  --primary-saturation: 42%;
-  --primary-lightness: 68%;
-  --primary-background-color: 28 32 42;
+  --primary-hue: 198deg;
+  --primary-saturation: 57%;
+  --primary-lightness: 40%;
+  --primary-background-color: 16 21 32; /* hsl(226, 23%, 11%) - navy bg */
 }
 
 /* Main background - deep slate blue */
@@ -76,40 +88,45 @@ footer:is(html[class~="dark"] *),
   --tw-border-opacity: 1;
   border-color: rgb(var(--primary-background-color) / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(42 48 62 / var(--tw-bg-opacity));
+  background-color: rgb(40 45 63 / var(--tw-bg-opacity)); /* Sidebar bg #282d3f */
 }
 
 /* Dark backgrounds */
-.dark\:hx-bg-dark:is(html[class~="dark"] *) {
+.dark\:hx-bg-dark:is(html[class~="dark"] *),
+.hx\:dark\:bg-dark:is(html[class~="dark"] *),
+.hx\:dark\:hx-bg-dark:is(html[class~="dark"] *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
 }
 
-.dark\:hx-bg-dark\/50:is(html[class~="dark"] *) {
-  background-color: rgb(var(--primary-background-color) / 0.5);
+.dark\:hx-bg-dark\/50:is(html[class~="dark"] *),
+.hx\:dark\:bg-dark\/50:is(html[class~="dark"] *) {
+  background-color: rgb(var(--primary-background-color) / 0.5) !important;
 }
 
 .dark\:focus\:hx-bg-dark:focus:is(html[class~="dark"] *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
 }
 
-.dark\:hx-bg-neutral-900:is(html[class~="dark"] *) {
+.dark\:hx-bg-neutral-900:is(html[class~="dark"] *),
+.hx\:dark\:bg-neutral-900:is(html[class~="dark"] *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
 }
 
-/* Border colors - muted blue-gray */
+/* Border colors - navy theme borders */
 .dark\:hx-border-neutral-800:is(html[class~="dark"] *) {
   --tw-border-opacity: 1;
-  border-color: rgb(56 64 82 / var(--tw-border-opacity));
+  border-color: rgb(28 34 47 / var(--tw-border-opacity)); /* hsl(226, 23%, 16%) */
 }
 
 /* Shadow effects */
-.dark\:hx-shadow-\[0_-12px_16px_\#111\]:is(html[class~="dark"] *) {
-  --tw-shadow: 0 -12px 16px rgb(var(--primary-background-color));
-  --tw-shadow-colored: 0 -12px 16px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.dark\:hx-shadow-\[0_-12px_16px_\#111\]:is(html[class~="dark"] *),
+.hx\:dark\:shadow-\[0_-12px_16px_\#111\]:is(html[class~="dark"] *) {
+  --tw-shadow: 0 -12px 16px rgb(var(--primary-background-color)) !important;
+  --tw-shadow-colored: 0 -12px 16px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 
 /**************************/
@@ -148,14 +165,14 @@ footer:is(html[class~="dark"] *),
 }
 /**************************/
 
-/** Code blocks - dark slate blue matching theme **/
+/** Code blocks - navy theme dark blue **/
 .hextra-code-block pre:is(html[class~="dark"] *) {
-  background-color: rgb(22 26 36 / 0.6) !important;
-  border: 1px solid rgb(56 64 82 / 0.3);
+  background-color: rgb(22 25 35 / 0.6) !important; /* Popup bg #161923 */
+  border: 1px solid rgb(28 34 47 / 0.3); /* Border color */
 }
 
 .hextra-code-block .highlight pre:is(html[class~="dark"] *) {
-  background-color: rgb(22 26 36 / 0.6) !important;
+  background-color: rgb(22 25 35 / 0.6) !important;
 }
 
 .hextra-code-block pre {
@@ -226,17 +243,328 @@ a.badge-warning:focus, a.badge-warning.focus {
 }
 /**************************/
 
-/** Scrollbar styling for dark mode **/
+/** Scrollbar styling for dark mode - navy theme **/
 :is(html[class~="dark"] *)::-webkit-scrollbar-track {
   background-color: rgb(var(--primary-background-color) / 0.3);
 }
 
 :is(html[class~="dark"] *)::-webkit-scrollbar-thumb {
-  background-color: rgb(56 64 82 / 0.6);
+  background-color: rgb(115 116 128 / 0.6); /* Icons color #737480 */
   border-radius: 6px;
 }
 
 :is(html[class~="dark"] *)::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(var(--primary-hue) var(--primary-saturation) calc(var(--primary-lightness) - 20%) / 0.7);
+  background-color: rgb(183 185 204 / 0.7); /* Icons hover #b7b9cc */
 }
 /**************************/
+
+/** Light mode styling - mdBook light theme **/
+
+/* Light mode backgrounds */
+html:not(.dark) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+body:not(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity));
+}
+
+/* Light mode header and footer */
+header:not(html[class~="dark"] *),
+footer:not(html[class~="dark"] *),
+.nav-container:not(html[class~="dark"] *),
+.hextra-nav-container:not(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
+}
+
+/* Light mode borders */
+.hx-border-neutral-800:not(html[class~="dark"] *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(var(--light-border-color) / var(--tw-border-opacity));
+}
+
+/* Light mode code blocks */
+.hextra-code-block pre:not(html[class~="dark"] *) {
+  background-color: rgb(250 250 250 / 0.8) !important; /* Sidebar bg #fafafa */
+  border: 1px solid rgb(var(--light-border-color) / 0.5);
+}
+
+.hextra-code-block .highlight pre:not(html[class~="dark"] *) {
+  background-color: rgb(250 250 250 / 0.8) !important;
+}
+
+/* Light mode scrollbar */
+html:not(.dark) *::-webkit-scrollbar-track {
+  background-color: rgb(230 230 230 / 0.5); /* #e6e6e6 - theme hover */
+}
+
+html:not(.dark) *::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--light-scrollbar-color) / 0.7); /* #8F8F8F */
+  border-radius: 6px;
+}
+
+html:not(.dark) *::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--light-icon-color) / 0.9); /* #747474 */
+}
+
+/* Light mode image zoom overlay */
+.medium-zoom-overlay:not(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(200 200 205 / 0.4) !important; /* mdBook light overlay */
+}
+
+/* Light mode TOC sidebar sticky bottom section */
+.hx\:bg-white:not(html[class~="dark"] *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--primary-background-color) / var(--tw-bg-opacity)) !important;
+}
+
+.hx\:shadow-\[0_-12px_16px_white\]:not(html[class~="dark"] *) {
+  --tw-shadow: 0 -12px 16px rgb(var(--primary-background-color));
+  --tw-shadow-colored: 0 -12px 16px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Light mode border colors */
+.hx\:border-gray-200:not(html[class~="dark"] *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(var(--light-border-color) / var(--tw-border-opacity)) !important;
+}
+
+/* Light mode syntax highlighting - mdBook style */
+html:not(.dark) .chroma,
+html:not(.dark) .highlight {
+  background-color: rgb(250 250 250 / 0.8) !important;
+}
+
+/* Light theme syntax highlighting colors matching mdBook */
+html:not(.dark) .chroma .k,   /* Keywords */
+html:not(.dark) .chroma .kc,  /* Keyword constant */
+html.not(.dark) .chroma .kd,  /* Keyword declaration */
+html:not(.dark) .chroma .kn,  /* Keyword namespace */
+html:not(.dark) .chroma .kp,  /* Keyword pseudo */
+html:not(.dark) .chroma .kr,  /* Keyword reserved */
+html:not(.dark) .chroma .kt {  /* Keyword type */
+  color: #8959a8 !important;  /* Purple for keywords like 'false' */
+}
+
+html:not(.dark) .chroma .s,   /* String */
+html:not(.dark) .chroma .s1,  /* String single quote */
+html:not(.dark) .chroma .s2,  /* String double quote */
+html:not(.dark) .chroma .sb,  /* String backtick */
+html:not(.dark) .chroma .sc,  /* String char */
+html:not(.dark) .chroma .sd,  /* String doc */
+html:not(.dark) .chroma .se,  /* String escape */
+html:not(.dark) .chroma .sh,  /* String heredoc */
+html:not(.dark) .chroma .si,  /* String interpol */
+html:not(.dark) .chroma .sr,  /* String regex */
+html:not(.dark) .chroma .ss {  /* String symbol */
+  color: #718c00 !important;  /* Green for strings */
+}
+
+html:not(.dark) .chroma .na,  /* Name attribute */
+html:not(.dark) .chroma .nb,  /* Name builtin */
+html:not(.dark) .chroma .nc,  /* Name class */
+html:not(.dark) .chroma .no,  /* Name constant */
+html:not(.dark) .chroma .nd,  /* Name decorator */
+html:not(.dark) .chroma .ni,  /* Name entity */
+html:not(.dark) .chroma .ne,  /* Name exception */
+html:not(.dark) .chroma .nf,  /* Name function */
+html:not(.dark) .chroma .nl,  /* Name label */
+html:not(.dark) .chroma .nn,  /* Name namespace */
+html:not(.dark) .chroma .nx,  /* Name other */
+html:not(.dark) .chroma .py,  /* Name property */
+html:not(.dark) .chroma .nt,  /* Name tag */
+html:not(.dark) .chroma .nv {  /* Name variable */
+  color: #c82829 !important;  /* Red for property names */
+}
+
+html:not(.dark) .chroma .m,   /* Number */
+html:not(.dark) .chroma .mb,  /* Number binary */
+html:not(.dark) .chroma .mf,  /* Number float */
+html:not(.dark) .chroma .mh,  /* Number hex */
+html:not(.dark) .chroma .mi,  /* Number integer */
+html:not(.dark) .chroma .il,  /* Number integer long */
+html:not(.dark) .chroma .mo {  /* Number octal */
+  color: #c82829 !important;  /* Red for numbers */
+}
+
+html:not(.dark) .chroma .p {   /* Punctuation */
+  color: #4d4d4c !important;  /* Dark gray for operators/punctuation */
+}
+
+html:not(.dark) .chroma .c,   /* Comment */
+html:not(.dark) .chroma .c1,  /* Comment single */
+html:not(.dark) .chroma .ch,  /* Comment hashbang */
+html:not(.dark) .chroma .cm,  /* Comment multiline */
+html:not(.dark) .chroma .cp,  /* Comment preproc */
+html:not(.dark) .chroma .cpf, /* Comment preproc file */
+html:not(.dark) .chroma .cs {  /* Comment special */
+  color: #8e908c !important;  /* Gray for comments */
+  font-style: italic;
+}
+
+/* Section headers in TOML/config files [section] */
+
+html:not(.dark) .chroma .nn,
+
+html:not(.dark) .chroma .nt {
+
+  color: #0000ff !important;  /* Blue for section headers */
+
+  font-weight: bold;
+
+}
+
+
+
+/**************************/
+
+
+
+/* Dark mode syntax highlighting */
+
+html.dark .chroma .k,   /* Keywords */
+
+html.dark .chroma .kc,  /* Keyword constant */
+
+html.dark .chroma .kd,  /* Keyword declaration */
+
+html.dark .chroma .kn,  /* Keyword namespace */
+
+html.dark .chroma .kp,  /* Keyword pseudo */
+
+html.dark .chroma .kr,  /* Keyword reserved */
+
+html.dark .chroma .kt {  /* Keyword type */
+
+  color: #b7b9cc !important;
+
+}
+
+
+
+html.dark .chroma .s,   /* String */
+
+html.dark .chroma .s1,  /* String single quote */
+
+html.dark .chroma .s2,  /* String double quote */
+
+html.dark .chroma .sb,  /* String backtick */
+
+html.dark .chroma .sc,  /* String char */
+
+html.dark .chroma .sd,  /* String doc */
+
+html.dark .chroma .se,  /* String escape */
+
+html.dark .chroma .sh,  /* String heredoc */
+
+html.dark .chroma .si,  /* String interpol */
+
+html.dark .chroma .sr,  /* String regex */
+
+html.dark .chroma .ss {  /* String symbol */
+
+  color: #b7b9cc !important;
+
+}
+
+
+
+html.dark .chroma .na,  /* Name attribute */
+
+html.dark .chroma .nb,  /* Name builtin */
+
+html.dark .chroma .nc,  /* Name class */
+
+html.dark .chroma .no,  /* Name constant */
+
+html.dark .chroma .nd,  /* Name decorator */
+
+html.dark .chroma .ni,  /* Name entity */
+
+html.dark .chroma .ne,  /* Name exception */
+
+html.dark .chroma .nf,  /* Name function */
+
+html.dark .chroma .nl,  /* Name label */
+
+html.dark .chroma .nn,  /* Name namespace */
+
+html.dark .chroma .nx,  /* Name other */
+
+html.dark .chroma .py,  /* Name property */
+
+html.dark .chroma .nt,  /* Name tag */
+
+html.dark .chroma .nv {  /* Name variable */
+
+  color: #b7b9cc !important;
+
+}
+
+
+
+html.dark .chroma .m,   /* Number */
+
+html.dark .chroma .mb,  /* Number binary */
+
+html.dark .chroma .mf,  /* Number float */
+
+html.dark .chroma .mh,  /* Number hex */
+
+html.dark .chroma .mi,  /* Number integer */
+
+html.dark .chroma .il,  /* Number integer long */
+
+html.dark .chroma .mo {  /* Number octal */
+
+  color: #b7b9cc !important;
+
+}
+
+
+
+html.dark .chroma .p {   /* Punctuation */
+
+  color: #b7b9cc !important;
+
+}
+
+
+
+html.dark .chroma .c,   /* Comment */
+
+html.dark .chroma .c1,  /* Comment single */
+
+html.dark .chroma .ch,  /* Comment hashbang */
+
+html.dark .chroma .cm,  /* Comment multiline */
+
+html.dark .chroma .cp,  /* Comment preproc */
+
+html.dark .chroma .cpf, /* Comment preproc file */
+
+html.dark .chroma .cs {  /* Comment special */
+
+  color: #8e908c !important;
+
+  font-style: italic;
+
+}
+
+
+
+html.dark .chroma .nn,
+
+html.dark .chroma .nt {
+
+  color: #b7b9cc !important;
+
+  font-weight: bold;
+
+}
