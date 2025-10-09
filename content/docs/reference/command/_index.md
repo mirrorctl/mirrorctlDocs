@@ -7,7 +7,7 @@ sidebar:
   open: false
 ---
 
-# Commands
+The command reference provides the exact syntax used in each `mirrorctl` command and subcommand.
 
 - [sync]({{< relref "sync" >}}) - Synchronize repositories
 - [check]({{< relref "check" >}}) - Validate configuration and connectivity

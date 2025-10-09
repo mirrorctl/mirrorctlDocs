@@ -7,9 +7,13 @@ sidebar:
   open: false
 ---
 
-# Reference
+The reference section provides specific detail about configuration and command options for
+`mirrorctl`. Look here if you need specific configuration or command detail.
 
-- [Commands]({{< relref "command" >}}) - Command line interface reference
 - [Configuration]({{< relref "configuration" >}}) - Configuration file format and options
+- [Commands]({{< relref "command" >}}) - Command line interface reference
 - [Environment Variables]({{< relref "env-vars" >}}) - Environment variable reference
 - [Releases]({{< relref "releases" >}}) - Release notes and version history
+
+For step-by-step guides that help you complete specific tasks, see our available
+[Help Topics]({{< relref "../help-topics" >}}).

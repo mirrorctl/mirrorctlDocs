@@ -7,9 +7,7 @@ sidebar:
   open: false
 ---
 
-# Release Notes
-
-This section contains release notes and version history for mirrorctl.
+This section contains release notes and version history for `mirrorctl`.
 
 ## Available Releases
 
