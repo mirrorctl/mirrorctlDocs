@@ -167,12 +167,13 @@ footer:is(html[class~="dark"] *),
 
 /** Code blocks - navy theme dark blue **/
 .hextra-code-block pre:is(html[class~="dark"] *) {
-  background-color: rgb(22 25 35 / 0.6) !important; /* Popup bg #161923 */
-  border: 1px solid rgb(28 34 47 / 0.3); /* Border color */
+  background-color: rgb(40 45 63 / 0.5) !important; /* Lighter sidebar-like bg #282d3f */
+  border: 1px solid rgb(115 116 128 / 0.3); /* Subtle border using icon color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .hextra-code-block .highlight pre:is(html[class~="dark"] *) {
-  background-color: rgb(22 25 35 / 0.6) !important;
+  background-color: rgb(40 45 63 / 0.5) !important;
 }
 
 .hextra-code-block pre {
