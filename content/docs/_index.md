@@ -20,15 +20,12 @@ zero-downtime updates, configurable snapshots, and robust security validation.
 
 New to mirrorctl? Start here:
 
-1. **[Install]({{< relref "install" >}})** - Download and install mirrorctl on your system
-2. **[Tutorial]({{< relref "tutorial" >}})** - Step-by-step guide to get started with your first
-   mirror
-3. **[How-To Articles]({{< relref "how-tos" >}})** - Task-oriented guides for common operations
+- **[Install]({{< relref "install" >}})** - Download and install mirrorctl on your system
+- **[Tutorial]({{< relref "tutorial" >}})** - Step-by-step guide to get started with your first
+  mirror
 
-## Documentation Sections
+Additional resources:
 
-- **[Install]({{< relref "install" >}})** - Installation instructions for all supported platforms
-- **[Tutorial]({{< relref "tutorial" >}})** - Hands-on introduction to mirrorctl
-- **[Reference]({{< relref "reference" >}})** - Detailed documentation for configuration and
+- **[How-To Articles]({{< relref "how-tos" >}})** - Task-oriented guides for common operations
   commands
-- **[How-To Articles]({{< relref "how-tos" >}})** - Step-by-step guides for specific tasks
+- **[Reference]({{< relref "reference" >}})** - Detailed documentation for configuration and
