@@ -5,7 +5,7 @@ weight: 1
 
 `mirrorctl` is a good-faith fork of the `go-apt-mirror` portion of
 [cybozu-go/aptutil](https://github.com/cybozu-go/aptutil).
-The project was / is in maintenance mode,
+That project was / is in maintenance mode,
 and I liked it, but knew that it needed some work. So, I picked it up.
 
 I'm a Senior Linux Engineer living and working in Chicago, Illinois.
