@@ -21,7 +21,7 @@ params:
 menu:
   main:
     - identifier: documentation
-      name: Docs
+      name: Documentation
       pageRef: /docs
       weight: 1
     - identifier: Blog
