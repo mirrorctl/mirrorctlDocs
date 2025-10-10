@@ -1,6 +1,8 @@
 ---
 title: snapshot
 weight: 2
+cascade:
+  type: docs
 ---
 
 Manage repository snapshots for staging and production workflows.

@@ -87,5 +87,5 @@ mirrorctl sync
 
 ## See Also
 
-- [Command Reference]({{< relref "/docs/reference/command" >}}) - Details on environment variables
-- [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on TOML configuration file
+- [Command Reference]({{< relref "/reference/command" >}}) - Details on environment variables
+- [Configuration Reference]({{< relref "/reference/configuration" >}}) - Details on TOML configuration file

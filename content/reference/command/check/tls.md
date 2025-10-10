@@ -1,6 +1,8 @@
 ---
 title: tls
 weight: 4
+cascade:
+  type: docs
 ---
 
 The `mirrorctl check tls` command checks a mirror's TLS configuration and capabilities.
@@ -73,10 +75,10 @@ The command exits with status `0` on success and `1` if the mirror is not found 
 
 ## See Also
 
-- [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on TLS
+- [Configuration Reference]({{< relref "/reference/configuration" >}}) - Details on TLS
   configuration
-- [Environment Variables]({{< relref "/docs/reference/env-vars" >}}) - TLS-related environment
+- [Environment Variables]({{< relref "/reference/env-vars" >}}) - TLS-related environment
   variables
-- [check config]({{< relref "/docs/reference/command/check/config" >}}) - Validate configuration
+- [check config]({{< relref "/reference/command/check/config" >}}) - Validate configuration
   file
-- [sync]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories
+- [sync]({{< relref "/reference/command/sync" >}}) - Synchronize repositories

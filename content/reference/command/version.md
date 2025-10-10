@@ -1,6 +1,8 @@
 ---
 title: version
 weight: 99
+cascade:
+  type: docs
 ---
 
 ## The `version` command
@@ -36,4 +38,4 @@ The command exits with status `0` on success.
 
 ## See Also
 
-- [sync]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories
+- [sync]({{< relref "/reference/command/sync" >}}) - Synchronize repositories

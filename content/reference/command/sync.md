@@ -2,6 +2,8 @@
 title: sync
 weight: 1
 toc: false
+cascade:
+  type: docs
 ---
 
 The `sync` command initiates the download of external repositories, creating local mirrors of 
@@ -88,5 +90,5 @@ The command exits with status `0` on success and `1` on error.
 
 ## See Also
 
-- [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on TOML configuration file
-- [Environment Variables]({{< relref "/docs/reference/env-vars" >}}) - Details on environment variables
+- [Configuration Reference]({{< relref "/reference/configuration" >}}) - Details on TOML configuration file
+- [Environment Variables]({{< relref "/reference/env-vars" >}}) - Details on environment variables

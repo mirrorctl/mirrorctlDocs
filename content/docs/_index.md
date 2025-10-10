@@ -1,10 +1,8 @@
 ---
-title: Documentation
+title: Guide
 cascade:
   type: docs
 ---
-
-## What is mirrorctl?
 
 `mirrorctl` is a mirror-syncing utility for Debian software repositories. It provides
 admin-friendly features for creating and maintaining secure, reliable mirror infrastructure with
@@ -25,7 +23,7 @@ New to mirrorctl? Start here:
 1. **[Install]({{< relref "install" >}})** - Download and install mirrorctl on your system
 2. **[Tutorial]({{< relref "tutorial" >}})** - Step-by-step guide to get started with your first
    mirror
-3. **[Help Topics]({{< relref "help-topics" >}})** - Task-oriented guides for common operations
+3. **[How-To Articles]({{< relref "how-tos" >}})** - Task-oriented guides for common operations
 
 ## Documentation Sections
 
@@ -33,4 +31,4 @@ New to mirrorctl? Start here:
 - **[Tutorial]({{< relref "tutorial" >}})** - Hands-on introduction to mirrorctl
 - **[Reference]({{< relref "reference" >}})** - Detailed documentation for configuration and
   commands
-- **[Help Topics]({{< relref "help-topics" >}})** - Step-by-step guides for specific tasks
+- **[How-To Articles]({{< relref "how-tos" >}})** - Step-by-step guides for specific tasks

@@ -1,6 +1,8 @@
 ---
 title: snapshot delete
 weight: 11
+cascade:
+  type: docs
 ---
 
 The `mirrorctl snapshot delete` command permanently removes one or more snapshots from a mirror.
@@ -53,7 +55,7 @@ snapshots even if one fails.
 
 ## See Also
 
-- [snapshot create]({{< relref "/docs/reference/command/snapshot/create" >}}) - Create a snapshot
-- [snapshot list]({{< relref "/docs/reference/command/snapshot/list" >}}) - List snapshots
-- [snapshot prune]({{< relref "/docs/reference/command/snapshot/prune" >}}) - Automatically remove
+- [snapshot create]({{< relref "/reference/command/snapshot/create" >}}) - Create a snapshot
+- [snapshot list]({{< relref "/reference/command/snapshot/list" >}}) - List snapshots
+- [snapshot prune]({{< relref "/reference/command/snapshot/prune" >}}) - Automatically remove
   old snapshots

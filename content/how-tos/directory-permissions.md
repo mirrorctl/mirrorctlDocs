@@ -1,5 +1,7 @@
 ---
 title: Directory permissions
+cascade:
+  type: docs
 ---
 
 ### Issue

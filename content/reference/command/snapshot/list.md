@@ -1,6 +1,8 @@
 ---
 title: snapshot list
 weight: 9
+cascade:
+  type: docs
 ---
 
 The `mirrorctl snapshot list` command displays all snapshots for one or more mirrors.
@@ -68,9 +70,9 @@ The command exits with status `0` on success and `1` on error.
 
 ## See Also
 
-- [snapshot create]({{< relref "/docs/reference/command/snapshot/create" >}}) - Create a snapshot
-- [snapshot publish]({{< relref "/docs/reference/command/snapshot/publish" >}}) - Publish snapshot
+- [snapshot create]({{< relref "/reference/command/snapshot/create" >}}) - Create a snapshot
+- [snapshot publish]({{< relref "/reference/command/snapshot/publish" >}}) - Publish snapshot
   to production
-- [snapshot stage]({{< relref "/docs/reference/command/snapshot/stage" >}}) - Publish snapshot to
+- [snapshot stage]({{< relref "/reference/command/snapshot/stage" >}}) - Publish snapshot to
   staging
-- [snapshot delete]({{< relref "/docs/reference/command/snapshot/delete" >}}) - Delete snapshots
+- [snapshot delete]({{< relref "/reference/command/snapshot/delete" >}}) - Delete snapshots

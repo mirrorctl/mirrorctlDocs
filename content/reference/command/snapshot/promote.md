@@ -1,6 +1,8 @@
 ---
 title: snapshot promote
 weight: 7
+cascade:
+  type: docs
 ---
 
 The `mirrorctl snapshot promote` command promotes the currently staged snapshot to production.
@@ -43,10 +45,10 @@ The command exits with status `0` on success and `1` on error.
 
 ## See Also
 
-- [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on snapshot
+- [Configuration Reference]({{< relref "/reference/configuration" >}}) - Details on snapshot
   configuration
-- [snapshot stage]({{< relref "/docs/reference/command/snapshot/stage" >}}) - Publish snapshot to
+- [snapshot stage]({{< relref "/reference/command/snapshot/stage" >}}) - Publish snapshot to
   staging
-- [snapshot publish]({{< relref "/docs/reference/command/snapshot/publish" >}}) - Publish snapshot
+- [snapshot publish]({{< relref "/reference/command/snapshot/publish" >}}) - Publish snapshot
   to production
-- [snapshot list]({{< relref "/docs/reference/command/snapshot/list" >}}) - List snapshots
+- [snapshot list]({{< relref "/reference/command/snapshot/list" >}}) - List snapshots

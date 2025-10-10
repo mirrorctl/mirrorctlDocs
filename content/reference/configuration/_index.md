@@ -260,6 +260,6 @@ no_pgp_check = true
 
 ## See Also
 
-- [sync command]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories
-- [check config command]({{< relref "/docs/reference/command/check/config" >}}) - Validate configuration
-- [Environment Variables]({{< relref "/docs/reference/env-vars" >}}) - Environment variable reference
+- [sync command]({{< relref "/reference/command/sync" >}}) - Synchronize repositories
+- [check config command]({{< relref "/reference/command/check/config" >}}) - Validate configuration
+- [Environment Variables]({{< relref "/reference/env-vars" >}}) - Environment variable reference

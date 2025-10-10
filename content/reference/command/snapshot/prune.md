@@ -1,6 +1,8 @@
 ---
 title: snapshot prune
 weight: 10
+cascade:
+  type: docs
 ---
 
 The `mirrorctl snapshot prune` command removes old snapshots according to the configured retention
@@ -81,9 +83,9 @@ The command exits with status `0` on success and `1` on error.
 
 ## See Also
 
-- [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on snapshot
+- [Configuration Reference]({{< relref "/reference/configuration" >}}) - Details on snapshot
   retention configuration
-- [snapshot create]({{< relref "/docs/reference/command/snapshot/create" >}}) - Create a snapshot
-- [snapshot list]({{< relref "/docs/reference/command/snapshot/list" >}}) - List snapshots
-- [snapshot delete]({{< relref "/docs/reference/command/snapshot/delete" >}}) - Manually delete
+- [snapshot create]({{< relref "/reference/command/snapshot/create" >}}) - Create a snapshot
+- [snapshot list]({{< relref "/reference/command/snapshot/list" >}}) - List snapshots
+- [snapshot delete]({{< relref "/reference/command/snapshot/delete" >}}) - Manually delete
   snapshots

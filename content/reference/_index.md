@@ -16,4 +16,4 @@ The reference section provides specific detail about configuration and command o
 - [Releases]({{< relref "releases" >}}) - Release notes and version history
 
 For step-by-step guides that help you complete specific tasks, see our available
-[Help Topics]({{< relref "../help-topics" >}}).
+[How-To articles]({{< relref "../how-tos" >}}).

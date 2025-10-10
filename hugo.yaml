@@ -21,12 +21,16 @@ params:
 menu:
   main:
     - identifier: documentation
-      name: Documentation
+      name: Guide
       pageRef: /docs
       weight: 1
-    - identifier: Blog
-      name: Blog
-      pageRef: /blog
+    - identifier: reference
+      name: Reference
+      pageRef: /reference
+      weight: 1
+    - identifier: how-tos
+      name: How-Tos
+      pageRef: /how-tos
       weight: 2
     - identifier: about
       name: About

@@ -1,6 +1,8 @@
 ---
 title: config
 weight: 3
+cascade:
+  type: docs
 ---
 
 The `mirrorctl check config` command validates the configuration file and reports any issues.
@@ -79,8 +81,8 @@ The command exits with status `0` if the configuration is valid and `1` if valid
 
 ## See Also
 
-- [Configuration Reference]({{< relref "/docs/reference/configuration" >}}) - Details on TOML
+- [Configuration Reference]({{< relref "/reference/configuration" >}}) - Details on TOML
   configuration file
-- [check tls]({{< relref "/docs/reference/command/check/tls" >}}) - Check TLS connectivity for a
+- [check tls]({{< relref "/reference/command/check/tls" >}}) - Check TLS connectivity for a
   mirror
-- [sync]({{< relref "/docs/reference/command/sync" >}}) - Synchronize repositories
+- [sync]({{< relref "/reference/command/sync" >}}) - Synchronize repositories
