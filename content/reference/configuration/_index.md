@@ -24,7 +24,7 @@ Below is a complete example configuration for mirroring Debian Trixie:
   
 ```toml
 # mirrorctl Configuration File
-dir = "/var/www/html/mirror/"
+dir = "/var/www/apt/"
 max_conns = 10
 
 [log]
@@ -87,7 +87,7 @@ keep_within = "60d"
 
 # Base directory where mirrored repositories will be stored
 # REQUIRED: Must be an absolute path
-dir = "/var/www/html/mirror/"
+dir = "/var/www/apt/"
 
 # Maximum number of concurrent connections per mirror
 # Optional: Default is 10
@@ -247,7 +247,7 @@ There's a lot configured in the example above, but not each item is required. If
 complicated example, here is a minimal configuration for Debian Trixie:
 
 ```toml
-dir = "/var/www/html/mirror/"
+dir = "/var/www/apt/"
 
 [mirrors.debian-trixie]
 url = "https://deb.debian.org/debian/"

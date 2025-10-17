@@ -42,7 +42,7 @@ Override global snapshot settings under `[mirrors.<mirror-id>.snapshot]` and `[m
 For flat repositories (repositories without sections/architectures), append `/` to the suite name:
 
 ```toml
-dir = "/var/www/apt"
+dir = "/var/www/apt/"
 
 [mirrors.debian-experimental]
 url = "https://deb.debian.org/debian/"

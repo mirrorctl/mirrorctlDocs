@@ -10,10 +10,13 @@ sidebar:
 The reference section provides specific detail about configuration and command options for
 `mirrorctl`. Look here if you need specific configuration or command detail.
 
-- [Configuration]({{< relref "configuration" >}}) - Configuration file format and options
-- [Commands]({{< relref "command" >}}) - Command line interface reference
-- [Environment Variables]({{< relref "env-vars" >}}) - Environment variable reference
-- [Releases]({{< relref "releases" >}}) - Release notes and version history
+
+{{< cards cols="2" >}}
+  {{< card link="configuration" title="Configuration" icon="cog" >}}
+  {{< card link="command" title="Commands" icon="terminal" >}}
+  {{< card link="env-vars" title="Environment Variables" icon="variable" >}}
+  {{< card link="releases" title="Releases" icon="gift" >}}
+{{< /cards >}}
 
 For step-by-step guides that help you complete specific tasks, see our available
 [How-To articles]({{< relref "../how-tos" >}}).

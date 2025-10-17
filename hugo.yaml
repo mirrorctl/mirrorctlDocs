@@ -6,6 +6,7 @@ module:
     - path: github.com/imfing/hextra
 params:
   description: An admin-friendly mirror-syncing utility for Debian software repositories
+  latest_release: 1.5.0
   theme:
     default: light
     displayToggle: true

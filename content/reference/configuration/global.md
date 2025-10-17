@@ -19,7 +19,7 @@ title: global
 
 # Base directory where mirrored repositories will be stored
 # REQUIRED: Must be an absolute path
-dir = "/var/www/html/mirror/"
+dir = "/var/www/apt/"
 
 # Maximum number of concurrent connections per mirror
 # Optional: Default is 10
