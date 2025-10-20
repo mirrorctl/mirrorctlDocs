@@ -3,10 +3,11 @@ title: Install
 weight: 1
 ---
 
-We plan on making easier-to-use deployment methods in the future, but for now you can get started
-with the following commands.
+## Prebuilt binaries
 
-## Manual Installation
+Prebuilt binaries are available for for both Linux and Mac operating systems, including builds for both x86_64 and arm64 architectures. 
+
+Please consult your operating system documentation if you need help setting file permissions or modifying your PATH environment variable.
 
 {{< tabs items="Linux (x86_64),Linux (arm64),MacOS (arm64 - Apple Silicon),MacOS (x86_64 - Intel)" >}}
 
@@ -92,21 +93,7 @@ mirrorctl version
 {{< /tab >}}
 {{< /tabs >}}
 
-## Alternative Installation Locations
-
-If you don't have sudo access or prefer to install to a different location:
-
-```bash
-# Install to user directory
-mkdir -p ~/.local/bin
-mv mirrorctl ~/.local/bin/
-chmod +x ~/.local/bin/mirrorctl
-
-# Add to PATH (add this to your ~/.bashrc or ~/.zshrc)
-export PATH="$HOME/.local/bin:$PATH"
-```
-
-## Verify Installation
+## Verify installation
 
 After installation, verify that mirrorctl is working correctly:
 
@@ -114,7 +101,7 @@ After installation, verify that mirrorctl is working correctly:
 mirrorctl version
 ```
 
-## Verify Checksums (Optional)
+## Verify checksums (Optional)
 
 To verify the integrity of your download:
 
@@ -126,6 +113,33 @@ curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/checksu
 sha256sum -c checksums.txt --ignore-missing
 ```
 
+## Verify the mirrorctl cosign signature (Optional)
+
+Official `mirrorctl` release binaries are signed by by the project's `cosign` private key. You can
+verify that your `mirrorctl` binary was produced by our build system by following these
+instructions:
+
+1. Install [cosign](https://docs.sigstore.dev/cosign/system_config/installation/)
+1. Retrieve the `mirrorctl` cosign public key:
+
+   ```
+   curl -LO https://github.com/mirrorctl/mirrorctl/raw/refs/heads/main/cosign.pub
+   ```
+
+1. Retrieve the `mirrorctl` `.sig` file that corresponds to the archive that you downloaded. For
+   example, here's how to download the signature file for the 1.5.0 release file for the `x86_64`
+   architecture:
+
+   ```
+   curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_linux_amd64.tar.gz.sig
+   ```
+
+1. Run the relevant `cosign` command to verify the release archive signature:
+
+   ```
+   cosign verify-blob --key cosign.pub /path/to/mirrorctl_1.5.0_linux_amd64.tar.gz --signature /path/to/mirrorctl_1.5.0_linux_amd64.tar.gz.sig
+   ```
+
 ## Upgrading
 
 To upgrade to a newer version, simply download and install the new version following the same steps above. The new binary will replace the existing one.
@@ -136,12 +150,6 @@ To remove mirrorctl:
 
 ```bash
 sudo rm /usr/local/bin/mirrorctl
-```
-
-Or if installed to `~/.local/bin`:
-
-```bash
-rm ~/.local/bin/mirrorctl
 ```
 
 ## Next Steps
