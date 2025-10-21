@@ -19,6 +19,11 @@ params:
   page:
     # full (100%), wide (90rem), normal (1280px)
     width: wide
+  externalLinkDecoration: true
+  banner:
+    key: announcement-wip
+    message: | 
+      Hello! Thanks for visiting! `mirrorctl` is still a young project, and the documentation is still a work-in-progress.
 menu:
   main:
     - identifier: documentation
@@ -63,8 +68,8 @@ menu:
     - name: "About"
       pageRef: "/about"
       weight: 2
-    - name: "Hugo Docs ↗"
-      url: "https://gohugo.io/documentation/"
+    - name: "Hextra Docs ↗"
+      url: "https://imfing.github.io/hextra/"
       weight: 3
 markup:
   goldmark:

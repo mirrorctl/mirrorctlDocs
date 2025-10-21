@@ -3,11 +3,13 @@ title: Install
 weight: 1
 ---
 
-## Prebuilt binaries
+## Install a prebuilt binary
 
-Prebuilt binaries are available for for both Linux and Mac operating systems, including builds for both x86_64 and arm64 architectures. 
+Prebuilt binaries are available for for both Linux and Mac operating systems, including builds for
+both x86_64 and arm64 architectures. 
 
-Please consult your operating system documentation if you need help setting file permissions or modifying your PATH environment variable.
+Please consult your operating system documentation if you need help setting file permissions or
+modifying your PATH environment variable.
 
 {{< tabs items="Linux (x86_64),Linux (arm64),MacOS (arm64 - Apple Silicon),MacOS (x86_64 - Intel)" >}}
 
@@ -93,15 +95,7 @@ mirrorctl version
 {{< /tab >}}
 {{< /tabs >}}
 
-## Verify installation
-
-After installation, verify that mirrorctl is working correctly:
-
-```bash
-mirrorctl version
-```
-
-## Verify checksums (Optional)
+### Verify checksums (Optional)
 
 To verify the integrity of your download:
 
@@ -113,7 +107,7 @@ curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/checksu
 sha256sum -c checksums.txt --ignore-missing
 ```
 
-## Verify the mirrorctl cosign signature (Optional)
+### Verify the mirrorctl cosign signature (Optional)
 
 Official `mirrorctl` release binaries are signed by by the project's `cosign` private key. You can
 verify that your `mirrorctl` binary was produced by our build system by following these
@@ -140,11 +134,40 @@ instructions:
    cosign verify-blob --key cosign.pub /path/to/mirrorctl_1.5.0_linux_amd64.tar.gz --signature /path/to/mirrorctl_1.5.0_linux_amd64.tar.gz.sig
    ```
 
-## Upgrading
+### Inspect the Software Bill of Materials (Optional)
 
-To upgrade to a newer version, simply download and install the new version following the same steps above. The new binary will replace the existing one.
+`mirrorctl` ships with a [Software Bill of Materials](https://www.cisa.gov/sbom) (SBOM) that is
+generated at build time, and which you can inspect with the
+[Anchore Grype](https://anchore.com/opensource/) application:
 
-## Uninstalling
+1. Install [Anchore Grype](https://github.com/anchore/grype?tab=readme-ov-file#installation).
+1. Download the relevant SBOM file for your archive. For example, here's the SBOM for the 1.5.0
+   version for the AMD64 Linux archive:
+
+   ```
+   curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_linux_amd64.spdx.json
+   ```
+
+1. Run the `grype` command against the downloaded SBOM json file:
+
+   ```
+   grype sbom:mirrorctl_1.5.0_linux_amd64.spdx.json
+   ```
+1. View the results:
+   ```
+   $ grype sbom:mirrorctl_1.5.0_linux_amd64.spdx.json
+   ✔ Vulnerability DB                [updated]  
+   ✔ Scanned for vulnerabilities     [0 vulnerability matches]  
+     ├── by severity: 0 critical, 0 high, 0 medium, 0 low, 0 negligible
+   No vulnerabilities found
+   ```
+
+## Upgrade
+
+To upgrade to a newer version, simply download and install the new version following the same
+steps above. The new binary will replace the existing one.
+
+## Uninstall
 
 To remove mirrorctl:
 
