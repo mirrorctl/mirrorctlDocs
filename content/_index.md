@@ -9,9 +9,9 @@ layout: hextra-home
   imageWidth="300"
 >}}
 
-{{< hextra/hero-badge link="/reference/releases/mirrorctl-1.5.0-release-notes" >}}
+{{< hextra/hero-badge link="/reference/releases/mirrorctl-1.5.1-release-notes" >}}
   <div class="hx-w-2 hx-h-2 hx-rounded-full hx-bg-primary-400"></div>
-  <span>Latest version: v1.5.0</span>
+  <span>Latest version: v1.5.1</span>
   {{< icon name="arrow-circle-right" attributes="height=14" >}}
 {{< /hextra/hero-badge >}}
 

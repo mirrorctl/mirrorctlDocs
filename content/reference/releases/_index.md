@@ -11,5 +11,6 @@ toc: false
 This section contains release notes and version history for `mirrorctl`.
 
 {{< cards cols="1" >}}
+  {{< card icon="cube" link="mirrorctl-1.5.1-release-notes" title="mirrorctl 1.5.1" >}}
   {{< card icon="cube" link="mirrorctl-1.5.0-release-notes" title="mirrorctl 1.5.0" >}}
 {{< /cards >}}

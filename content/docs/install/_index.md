@@ -17,10 +17,10 @@ modifying your PATH environment variable.
 
 ```bash
 # Download the binary - Linux x86_64
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_linux_amd64.tar.gz
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_linux_amd64.tar.gz
 
 # Extract the archive
-tar -xzf mirrorctl_1.5.0_linux_amd64.tar.gz
+tar -xzf mirrorctl_1.5.1_linux_amd64.tar.gz
 
 # Move the binary to your PATH
 sudo mv mirrorctl /usr/local/bin/
@@ -38,10 +38,10 @@ mirrorctl version
 
 ```bash
 # Download the binary - Linux arm64
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_darwin_arm64.tar.gz
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_darwin_arm64.tar.gz
 
 # Extract the archive
-tar -xzf mirrorctl_1.5.0_darwin_arm64.tar.gz
+tar -xzf mirrorctl_1.5.1_darwin_arm64.tar.gz
 
 # Move the binary to your PATH
 sudo mv mirrorctl /usr/local/bin/
@@ -57,10 +57,10 @@ mirrorctl version
 {{< tab >}}
 ```bash
 # Download the binary - MacOS Apple Silicon / arm64
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_linux_arm64.tar.gz
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_linux_arm64.tar.gz
 
 # Extract the archive
-tar -xzf mirrorctl_1.5.0_linux_arm64.tar.gz
+tar -xzf mirrorctl_1.5.1_linux_arm64.tar.gz
 
 # Move the binary to your PATH
 sudo mv mirrorctl /usr/local/bin/
@@ -77,10 +77,10 @@ mirrorctl version
 
 ```bash
 # Download the binary - MacOS x86_64
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_darwin_amd64.tar.gz
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_darwin_amd64.tar.gz
 
 # Extract the archive
-tar -xzf mirrorctl_1.5.0_darwin_amd64.tar.gz
+tar -xzf mirrorctl_1.5.1_darwin_amd64.tar.gz
 
 # Move the binary to your PATH
 sudo mv mirrorctl /usr/local/bin/
@@ -101,7 +101,7 @@ To verify the integrity of your download:
 
 ```bash
 # Download checksums file
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/checksums.txt
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/checksums.txt
 
 # Verify checksum (Linux/macOS)
 sha256sum -c checksums.txt --ignore-missing
@@ -121,17 +121,17 @@ instructions:
    ```
 
 1. Retrieve the `mirrorctl` `.sig` file that corresponds to the archive that you downloaded. For
-   example, here's how to download the signature file for the 1.5.0 release file for the `x86_64`
+   example, here's how to download the signature file for the 1.5.1 release file for the `x86_64`
    architecture:
 
    ```
-   curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_linux_amd64.tar.gz.sig
+   curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_linux_amd64.tar.gz.sig
    ```
 
 1. Run the relevant `cosign` command to verify the release archive signature:
 
    ```
-   cosign verify-blob --key cosign.pub /path/to/mirrorctl_1.5.0_linux_amd64.tar.gz --signature /path/to/mirrorctl_1.5.0_linux_amd64.tar.gz.sig
+   cosign verify-blob --key cosign.pub /path/to/mirrorctl_1.5.1_linux_amd64.tar.gz --signature /path/to/mirrorctl_1.5.1_linux_amd64.tar.gz.sig
    ```
 
 ### Inspect the Software Bill of Materials (Optional)
@@ -141,21 +141,21 @@ generated at build time, and which you can inspect with the
 [Anchore Grype](https://anchore.com/opensource/) application:
 
 1. Install [Anchore Grype](https://github.com/anchore/grype?tab=readme-ov-file#installation).
-1. Download the relevant SBOM file for your archive. For example, here's the SBOM for the 1.5.0
+1. Download the relevant SBOM file for your archive. For example, here's the SBOM for the 1.5.1
    version for the AMD64 Linux archive:
 
    ```
-   curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.0/mirrorctl_1.5.0_linux_amd64.spdx.json
+   curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_linux_amd64.spdx.json
    ```
 
 1. Run the `grype` command against the downloaded SBOM json file:
 
    ```
-   grype sbom:mirrorctl_1.5.0_linux_amd64.spdx.json
+   grype sbom:mirrorctl_1.5.1_linux_amd64.spdx.json
    ```
 1. View the results:
    ```
-   $ grype sbom:mirrorctl_1.5.0_linux_amd64.spdx.json
+   $ grype sbom:mirrorctl_1.5.1_linux_amd64.spdx.json
    ✔ Vulnerability DB                [updated]  
    ✔ Scanned for vulnerabilities     [0 vulnerability matches]  
      ├── by severity: 0 critical, 0 high, 0 medium, 0 low, 0 negligible

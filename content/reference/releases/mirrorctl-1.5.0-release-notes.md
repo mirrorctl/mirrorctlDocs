@@ -1,6 +1,7 @@
 ---
 title: v1.5.0
 toc: false
+weight: 99
 ---
 
 This is the initial release of an application formerly known as `go-apt-mirror`.
