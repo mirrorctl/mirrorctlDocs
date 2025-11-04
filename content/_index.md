@@ -23,51 +23,67 @@ layout: hextra-home
 
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-subtitle >}}
-  *mirrorctl* is a mirror-syncing utility for Debian & Ubuntu software repositories.<br/><br/>
-  If you're looking for a reliable, secure, and easy-to-use utility for syncing external mirrors,
-  consider *mirrorctl*.
+  Zero-downtime repository mirroring with atomic updates, snapshots, and enterprise-grade security.<br/>
+  Built for system administrators who need reliable, production-ready mirror infrastructure.
 {{< /hextra/hero-subtitle >}}
 </div>
 {{< /hextra/hero-container >}}
 
 <div class="hx-mt-6"></div>
 <div class="hx-mt-6"></div>
+
+{{< hextra/hero-container >}}
+{{< hextra/hero-section heading="h3" >}}
+See it in action
+{{< /hextra/hero-section >}}
+{{< /hextra/hero-container >}}
+
+<div class="hx-mt-6"></div>
+
+<div style="max-width: 1200px; margin: 0 auto;">
+  <img src="/mirrorctl-sync.gif" alt="mirrorctl sync demonstration" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+</div>
+
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
+
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+  <a href="/docs/install" style="display: inline-block; padding: 0.75rem 2rem; background: hsl(var(--primary)); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: opacity 0.2s;">Get Started →</a>
+  <a href="/docs/tutorial" style="display: inline-block; padding: 0.75rem 2rem; border: 2px solid hsl(var(--primary)); color: hsl(var(--primary)); text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.2s;">View Tutorial</a>
+</div>
+
+<div class="hx-mt-6"></div>
+<div class="hx-mt-6"></div>
 <div class="hx-mt-6"></div>
 
 {{< hextra/hero-container >}}
 {{< hextra/hero-section heading="h3" >}}
-Why use mirrorctl?
+Key Features
 {{< /hextra/hero-section >}}
 {{< /hextra/hero-container >}}
 
 <div class="hx-mt-6"></div>
 <div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
 
-{{< hextra/feature-grid cols="3" >}}
+{{< hextra/feature-grid cols="2" >}}
   {{< hextra/feature-card
-    title="Atomic Updates"
-    subtitle="`mirrorctl` only updates the publicly-facing mirror once a successful mirror sync is complete. Users will never see a mirror with a 'sync in progress' message."
+    title="Zero-Downtime Atomic Updates"
+    subtitle="Your users never see incomplete syncs or 'mirror in progress' messages. `mirrorctl` only updates the public-facing mirror after a complete, verified sync succeeds."
   >}}
 
   {{< hextra/feature-card
-    title="Configurable Snapshots"
-    subtitle="Create repository snapshots at will, giving you the ability to easily roll-back to a known-good mirror state or to facilitate reproducible builds. You can even stage snapshots for testing before promoting them to production."
+    title="Snapshot Management"
+    subtitle="Create point-in-time snapshots for rollback capability and reproducible builds. Stage snapshots for testing before promoting to production, with automated pruning by age or count."
   >}}
 
   {{< hextra/feature-card
-    title="Partial Repository Syncs"
-    subtitle="You can sync only the portions of a mirror that you want, limiting your sync based on architecture, component or suite. You can even filter repository downloads to exclude certain patterns or download only a prescribed number of package versions."
+    title="Enterprise Security Built-In"
+    subtitle="Multi-layer validation with PGP signature verification, checksum validation (md5/sha1/sha256/sha512), TLS enforcement with configurable versions, and path traversal protections. All releases are cosign-signed with SBOMs included."
   >}}
 
   {{< hextra/feature-card
-    title="Predictable Storage Needs"
-    subtitle="`mirrorctl` provides a '--dry-run' flag that shows you how much storage would be used by a repository sync without actually downloading the packages. This helps you to gauge storage needs before you sync your repositories."
-  >}}
-
-  {{< hextra/feature-card
-    title="Easy to Keep Clean"
-    subtitle="`mirrorctl` can optionally prune repository snapshots based on a set count of snapshots, or you can prune your repository based on a snapshot's age. Either way, `mirrorctl` makes it easy to keep storage needs in check."
+    title="Flexible & Efficient Syncing"
+    subtitle="Sync only what you need by architecture, suite, or component. Filter packages by pattern, limit version counts, and use `--dry-run` to preview storage requirements before downloading."
   >}}
 {{< /hextra/feature-grid >}}
 
@@ -76,39 +92,12 @@ Why use mirrorctl?
 <div class="hx-mt-6"></div>
 
 {{< hextra/hero-container >}}
-{{< hextra/hero-section heading="h3" >}}
-Security-related highlights
-{{< /hextra/hero-section >}}
+<div style="text-align: center; padding: 3rem 1rem;">
+  <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Ready to build reliable mirror infrastructure?</h2>
+  <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Install mirrorctl in minutes and create your first production-ready mirror today.</p>
+  <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+    <a href="/docs/install" style="display: inline-block; padding: 1rem 2.5rem; background: hsl(var(--primary)); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; transition: opacity 0.2s;">Get Started →</a>
+    <a href="https://github.com/mirrorctl/mirrorctl" style="display: inline-block; padding: 1rem 2.5rem; border: 2px solid hsl(var(--primary)); color: hsl(var(--primary)); text-decoration: none; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; transition: all 0.2s;">View on GitHub</a>
+  </div>
+</div>
 {{< /hextra/hero-container >}}
-
-{{< hextra/feature-grid cols="3" >}}
-  {{< hextra/feature-card
-    title="Checksum Validation"
-    subtitle="`mirrorctl` validates checksums before downloading packages, and only downloads packages when the checksums match. Checksum types `md5`, `sha1`, `sha256` and `sha512` are supported."
-  >}}
-
-  {{< hextra/feature-card
-    title="PGP Key Validation"
-    subtitle="By default, the application requires that you provide the upstream mirror's public PGP key, ensuring the integrity of downloaded packages. (This feature can be disabled if needed during testing.)"
-  >}}
-
-  {{< hextra/feature-card
-    title="TLS Validation"
-    subtitle="The application can validate upstream mirror TLS support, and allows you to configure minimum and maximum TLS versions. For advanced use cases, `mirrorctl` also supports custom certificate authorities, mutualTLS certificate/key combinations, specific cipher selections, and Server Name Identification (SNI) configurations."
-  >}}
-
-  {{< hextra/feature-card
-    title="No Need to Generate Keys"
-    subtitle="`mirrorctl` does not manipulate mirrors (for example, it doesn't merge packages from one repository into another), so the PGP keys provided by the upstream repositories are the only keys that you need to work with."
-  >}}
-
-  {{< hextra/feature-card
-    title="Path and Symlink Protections"
-    subtitle="`mirrorctl` also blocks directory traversal attempts, restricts symlinks to approved directories, and validates all file paths. This prevents malicious repository metadata from accessing files outside of prescribed boundaries."
-  >}}
-
-  {{< hextra/feature-card
-    title="Signed Artifacts with SBOMs Included"
-    subtitle="Each release is signed by our repository's `cosign` key, and includes a Software Bill of Materials, allowing you to easily validate the artifacts and their dependencies."
-  >}}
-{{< /hextra/feature-grid >}}

@@ -38,10 +38,10 @@ mirrorctl version
 
 ```bash
 # Download the binary - Linux arm64
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_darwin_arm64.tar.gz
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_linux_arm64.tar.gz
 
 # Extract the archive
-tar -xzf mirrorctl_1.5.1_darwin_arm64.tar.gz
+tar -xzf mirrorctl_1.5.1_linux_arm64.tar.gz
 
 # Move the binary to your PATH
 sudo mv mirrorctl /usr/local/bin/
@@ -57,10 +57,10 @@ mirrorctl version
 {{< tab >}}
 ```bash
 # Download the binary - MacOS Apple Silicon / arm64
-curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_linux_arm64.tar.gz
+curl -LO https://github.com/mirrorctl/mirrorctl/releases/download/v1.5.1/mirrorctl_1.5.1_darwin_arm64.tar.gz
 
 # Extract the archive
-tar -xzf mirrorctl_1.5.1_linux_arm64.tar.gz
+tar -xzf mirrorctl_1.5.1_darwin_arm64.tar.gz
 
 # Move the binary to your PATH
 sudo mv mirrorctl /usr/local/bin/
