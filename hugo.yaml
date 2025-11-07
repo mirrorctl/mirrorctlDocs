@@ -8,7 +8,7 @@ params:
   description: An admin-friendly mirror-syncing utility for Debian software repositories
   latest_release: 1.5.0
   theme:
-    default: light
+    default: dark
     displayToggle: true
   navbar:
     displayTitle: true
@@ -30,17 +30,13 @@ menu:
       name: Guide
       pageRef: /docs
       weight: 1
-    - identifier: how-tos
-      name: How-Tos
-      pageRef: /how-tos
-      weight: 2
     - identifier: reference
       name: Reference
       pageRef: /reference
-      weight: 3
+      weight: 2
     - identifier: more
       name: More
-      weight: 4
+      weight: 3
     - identifier: blog
       name: Blog
       pageRef: /blog
@@ -51,6 +47,12 @@ menu:
       pageRef: /about
       parent: more
       weight: 2
+    - identifier: source
+      name: GitHub
+      url: https://github.com/mirrorctl/mirrorctl
+      weight: 4
+      params:
+        icon: github
     - name: Search
       weight: 5
       params:

@@ -4,9 +4,9 @@ layout: hextra-home
 ---
 
 {{< hextra/hero-container
-  image="/mirrorctl-logo.png"
-  imageTitle="mirrorctl - Sync Debian & Ubuntu repositories"
-  imageWidth="300"
+  image="/mirrorctl-sync.gif"
+  imageTitle="mirrorctl sync demonstration"
+  imageWidth="853"
 >}}
 
 {{< hextra/hero-badge link="/reference/releases/mirrorctl-1.5.1-release-notes" >}}
@@ -23,38 +23,14 @@ layout: hextra-home
 
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-subtitle >}}
-  Zero-downtime repository mirroring with atomic updates, snapshots, and enterprise-grade security.<br/>
-  Built for system administrators who need reliable, production-ready mirror infrastructure.
+  Zero-downtime Debian repository mirroring with atomic updates, snapshots, and conscientious
+  attention to security.<br/><br/>
+  Built for system administrators who need reliable, and easy-to use mirror infrastructure.
 {{< /hextra/hero-subtitle >}}
 </div>
 {{< /hextra/hero-container >}}
 
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
-
-{{< hextra/hero-container >}}
-{{< hextra/hero-section heading="h3" >}}
-See it in action
-{{< /hextra/hero-section >}}
-{{< /hextra/hero-container >}}
-
-<div class="hx-mt-6"></div>
-
-<div style="max-width: 1200px; margin: 0 auto;">
-  <img src="/mirrorctl-sync.gif" alt="mirrorctl sync demonstration" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
-</div>
-
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
-
-<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-  <a href="/docs/install" style="display: inline-block; padding: 0.75rem 2rem; background: hsl(var(--primary)); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: opacity 0.2s;">Get Started →</a>
-  <a href="/docs/tutorial" style="display: inline-block; padding: 0.75rem 2rem; border: 2px solid hsl(var(--primary)); color: hsl(var(--primary)); text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.2s;">View Tutorial</a>
-</div>
-
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
+<div style="margin-top: 4rem;"></div>
 
 {{< hextra/hero-container >}}
 {{< hextra/hero-section heading="h3" >}}
@@ -62,8 +38,7 @@ Key Features
 {{< /hextra/hero-section >}}
 {{< /hextra/hero-container >}}
 
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
+<div style="margin-top: 1rem;"></div>
 
 {{< hextra/feature-grid cols="2" >}}
   {{< hextra/feature-card
@@ -87,17 +62,26 @@ Key Features
   >}}
 {{< /hextra/feature-grid >}}
 
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
-<div class="hx-mt-6"></div>
+<div style="margin-top: 4rem;"></div>
 
 {{< hextra/hero-container >}}
-<div style="text-align: center; padding: 3rem 1rem;">
-  <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Ready to build reliable mirror infrastructure?</h2>
-  <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Install mirrorctl in minutes and create your first production-ready mirror today.</p>
-  <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <a href="/docs/install" style="display: inline-block; padding: 1rem 2.5rem; background: hsl(var(--primary)); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; transition: opacity 0.2s;">Get Started →</a>
-    <a href="https://github.com/mirrorctl/mirrorctl" style="display: inline-block; padding: 1rem 2.5rem; border: 2px solid hsl(var(--primary)); color: hsl(var(--primary)); text-decoration: none; border-radius: 0.5rem; font-weight: 600; font-size: 1.125rem; transition: all 0.2s;">View on GitHub</a>
-  </div>
-</div>
+{{< hextra/hero-section heading="h3" >}}
+Learn more about mirrorctl
+{{< /hextra/hero-section >}}
 {{< /hextra/hero-container >}}
+
+<div style="margin-top: 1rem;"></div>
+
+{{< hextra/feature-grid cols="2" >}}
+  {{< hextra/feature-card
+    title="Get Started"
+    subtitle="Install `mirrorctl` and create your first mirror."
+    link="/docs/install"
+  >}}
+
+  {{< hextra/feature-card
+    title="View on GitHub"
+    subtitle="Explore the source code, report issues, and contribute to the project."
+    link="https://github.com/mirrorctl/mirrorctl"
+  >}}
+{{< /hextra/feature-grid >}}
