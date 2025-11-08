@@ -4,15 +4,19 @@
 Output static/mirrorctl-sync.gif
 
 # Set up terminal
-Set FontSize 16
+Set FontSize 18 
 Set Width 1200
 Set Height 600
-Set Theme "Catppuccin Mocha"
+Set Theme "Espresso"
+Set WindowBar ColorfulRight
 
-#Set log level to error
+Hide
+Type "find /var/www/apt/ -mindepth 1 -delete"
+Enter
+Type "clear"
+Enter
+Show
 
-
-# Type and execute the command
 Type@100ms "mirrorctl sync --dry-run"
 Sleep 1
 Enter
